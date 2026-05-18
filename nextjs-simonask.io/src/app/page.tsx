@@ -1,0 +1,26 @@
+import { OpenForWorkBadge } from "@/components/open-for-work-badge";
+import { ArticlesComingSoon } from "@/components/articles-coming-soon";
+
+export default function HomePage() {
+  return (
+    <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-16 sm:px-8 sm:py-20">
+      <section className="mb-16 sm:mb-20">
+        <OpenForWorkBadge />
+        <h1 className="mt-8 font-display text-4xl leading-[1.15] tracking-tight text-foreground sm:text-5xl">
+          Hi, I&apos;m Simon.
+        </h1>
+        <p className="mt-4 max-w-lg text-lg leading-relaxed text-muted">
+          I work in digital analytics. Here, I write about what I&apos;m
+          exploring and learning along the way.
+        </p>
+      </section>
+
+      <section id="articles">
+        <h2 className="mb-6 font-display text-2xl tracking-tight text-foreground">
+          Articles
+        </h2>
+        <ArticlesComingSoon />
+      </section>
+    </main>
+  );
+}

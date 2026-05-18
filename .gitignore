@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Environment variables and secrets (never commit)
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Next.js (blog)
+.next/
+out/
+nextjs-simonask.io/.next/
+nextjs-simonask.io/out/
+
+# Sanity Studio
+dist/
+.sanity/
+studio-simonask.io/dist/
+studio-simonask.io/.sanity/
+
+# Vercel
+.vercel/
+
+# Logs and debug
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Test coverage
+coverage/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# TypeScript build info
+*.tsbuildinfo
