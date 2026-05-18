@@ -10,7 +10,7 @@ export default function HomePage() {
           Hi, I&apos;m Simon.
         </h1>
         <p className="mt-4 max-w-lg text-lg leading-relaxed text-muted">
-          This is my digital home.Here, I write about what I&apos;m
+          This is my digital home. Here, I write about what I&apos;m
           learning during my free time exploring digital analytics, AI and other related topics.
         </p>
       </section>
