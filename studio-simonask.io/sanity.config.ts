@@ -3,6 +3,7 @@ import {presentationTool} from 'sanity/presentation'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 
+import {studioDataset, studioProjectId} from './env'
 import {resolve} from './presentation/resolve'
 import {schemaTypes} from './schemaTypes'
 import {structure} from './structure'
@@ -14,8 +15,8 @@ export default defineConfig({
   name: 'default',
   title: 'simonask.io',
 
-  projectId: 'au2uzesy',
-  dataset: 'production',
+  projectId: studioProjectId,
+  dataset: studioDataset,
 
   plugins: [
     structureTool({structure}),

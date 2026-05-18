@@ -2,10 +2,7 @@
 
 Content studio for the simonask.io blog.
 
-- **Project ID:** `au2uzesy`
-- **Dataset:** `production`
-
-The project ID is a public identifier, not a secret.
+Project ID and dataset are set in `.env.local` (see `.env.example`). Use the same project ID as the Next.js app.
 
 ## Setup
 
@@ -15,15 +12,11 @@ cp .env.example .env.local
 npm run dev
 ```
 
+Set `SANITY_STUDIO_PROJECT_ID` and `SANITY_STUDIO_DATASET` in `.env.local` before running.
+
 Open [http://localhost:3333](http://localhost:3333).
 
-Optional in `.env.local`:
-
-```bash
-SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000
-```
-
-Use `https://stage.simonask.io` when previewing the staging site from a deployed studio.
+Optional: `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` (or `https://stage.simonask.io` for staging preview).
 
 ## Scripts
 

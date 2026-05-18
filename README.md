@@ -54,16 +54,16 @@ Open [http://localhost:3000](http://localhost:3000).
 ```bash
 cd studio-simonask.io
 npm install
-cp .env.example .env.local   # optional: SANITY_STUDIO_PREVIEW_ORIGIN
+cp .env.example .env.local   # SANITY_STUDIO_PROJECT_ID (same ID as the website)
 npm run dev
 ```
 
-Open [http://localhost:3333](http://localhost:3333). Manage the project at [sanity.io/manage](https://www.sanity.io/manage) → **au2uzesy**.
+Open [http://localhost:3333](http://localhost:3333). Project settings (including project ID) are at [sanity.io/manage](https://www.sanity.io/manage).
 
 ## Environment variables and secrets
 
 - **Do not commit** `.env`, `.env.local`, API tokens, or private keys.
-- The Sanity **project ID** (`au2uzesy`) and **dataset** (`production`) are public identifiers.
+- Sanity **project ID** and **dataset** live in `.env.local` (see `.env.example` in each app). They are not secret, but are kept out of the repo.
 - **Viewer token** and **revalidate secret** are required for draft preview and fast publish — see `.env.example` in each app folder and `nextjs-simonask.io/README.md`.
 
 ## Deployment

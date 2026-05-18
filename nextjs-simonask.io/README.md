@@ -1,6 +1,6 @@
 # simonask.io — Website
 
-Next.js blog for [simonask.io](https://simonask.io). Content is loaded from Sanity (project `au2uzesy`, dataset `production`).
+Next.js blog for [simonask.io](https://simonask.io). Content is loaded from Sanity — configure project ID and dataset via environment variables (see below).
 
 | Environment | URL | Git branch |
 |-------------|-----|------------|
@@ -17,7 +17,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-For **draft preview** locally, set in `.env.local`:
+Copy `.env.example` to `.env.local` and set:
+
+- `NEXT_PUBLIC_SANITY_PROJECT_ID` — from [sanity.io/manage](https://www.sanity.io/manage) → Project settings
+- `NEXT_PUBLIC_SANITY_DATASET` — usually `production`
+
+For **draft preview** locally, also set:
 
 - `SANITY_API_READ_TOKEN` — Viewer token from [sanity.io/manage](https://www.sanity.io/manage) → API → Tokens
 - `NEXT_PUBLIC_SITE_ENV=staging` — show drafts and staging banner
@@ -51,6 +56,8 @@ For **draft preview** locally, set in `.env.local`:
 
 | Variable | Production | Preview (`staging`) |
 |----------|:----------:|:-------------------:|
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | ✓ | ✓ |
+| `NEXT_PUBLIC_SANITY_DATASET` | ✓ | ✓ |
 | `SANITY_API_READ_TOKEN` | — | Viewer token |
 | `NEXT_PUBLIC_SITE_ENV` | — | `staging` |
 | `SANITY_REVALIDATE_SECRET` | ✓ | ✓ |
