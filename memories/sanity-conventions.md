@@ -14,7 +14,9 @@ Read when: schema, Studio config, GROQ, Presentation preview, or publish/revalid
 
 ## Post document (`post`)
 
-Fields: `title`, `slug`, `publishedAt`, `image`, `body` (block content).
+Fields: `title`, `slug`, `publishedAt`, `image`, `body` (`blockContent` portable text).
+
+**Body components** (insert via + in the body field): text blocks (normal, H2, H3, quote), **Callout**, **Figure**, **Code block**. Schema: `schemaTypes/blockContentType.ts`, `schemaTypes/blocks/`. Site render: `nextjs-simonask.io/src/components/article-body.tsx`.
 
 Site queries (in Next app `src/sanity/queries.ts`):
 

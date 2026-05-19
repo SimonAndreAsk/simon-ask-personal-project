@@ -9,6 +9,7 @@ For publish flow, GROQ, webhooks, and draft preview → [sanity-conventions.md](
 | Change | File(s) |
 |--------|---------|
 | New / edit document type | `schemaTypes/<name>.ts` → register in `schemaTypes/index.ts` |
+| Article body components | `schemaTypes/blocks/<name>.ts` → add to `blockContentType.ts` `of` → register in `index.ts` → render in `article-body.tsx` |
 | Desk sidebar | `structure.ts` |
 | Presentation URLs | `presentation/resolve.ts` |
 | Plugins, preview origin | `sanity.config.ts` |
