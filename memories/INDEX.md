@@ -10,6 +10,7 @@ Project-specific context for agents. **Do not read every file** — pick at most
 | [sanity-studio-development.md](./sanity-studio-development.md) | New types, fields, desk, plugins, Presentation in Studio |
 | [decisions.md](./decisions.md) | Why something was built a certain way |
 | [refine-prompt.md](./refine-prompt.md) | User wants a prompt refined (Identity, Task, Context, Constraints, Output) |
+| [doc-sync.md](./doc-sync.md) | What agent docs to update when code structure changes |
 
 ## Not duplicated here
 

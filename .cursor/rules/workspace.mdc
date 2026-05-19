@@ -5,12 +5,9 @@ alwaysApply: true
 
 # Workspace
 
-Two apps: `nextjs-simonask.io` (public site) and `studio-simonask.io` (Sanity Studio).
+`nextjs-simonask.io` (site) · `studio-simonask.io` (Studio). Code: `staging` → stage → `main` → prod. Content: Sanity publish → revalidate.
 
-- Code ships via Git: `staging` → stage.simonask.io, `main` → simonask.io
-- Content ships via Sanity publish → webhook revalidates Next.js
-- Never commit secrets; use `.env.example` as reference
-
-Before large or cross-app changes, check `memories/INDEX.md` and read at most one relevant file under `memories/`.
-
-Operational runbooks: root `README.md`. Router: root `AGENTS.md`.
+- Secrets: never commit; see `.env.example`
+- Deep context: `memories/INDEX.md` (read ≤1 file per task)
+- Structural changes: update docs per `memories/doc-sync.md`; run `node scripts/validate-agent-docs.mjs` before done
+- Runbooks: root `README.md` · Router: `AGENTS.md`

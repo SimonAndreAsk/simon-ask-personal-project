@@ -4,28 +4,9 @@ globs: studio-simonask.io/**/*
 alwaysApply: false
 ---
 
-# Sanity Studio (`studio-simonask.io`)
+# Studio (`studio-simonask.io`)
 
-## Layout
+Schema → `schemaTypes/` + `index.ts`. Desk → `structure.ts`. Preview → `presentation/resolve.ts`.
 
-- Config: `sanity.config.ts` — structure, presentation, vision plugins
-- Schema: `schemaTypes/` (register in `schemaTypes/index.ts`)
-- Custom desk: `structure.ts`
-- Presentation resolve: `presentation/resolve.ts`
-- Env: `env.ts` — project ID and dataset from env vars
-
-## Content model
-
-- Document type `post`: title, slug, publishedAt, image, body (portable text blocks)
-- Slugs drive routes on the site: `nextjs-simonask.io/src/app/[slug]/page.tsx`
-
-## Preview
-
-Presentation tool points at the Next app (`SANITY_STUDIO_PREVIEW_ORIGIN`, default `http://localhost:3000`). Draft mode endpoints: `/api/draft-mode/enable` and `/disable` on the Next app.
-
-## Conventions
-
-- Match existing Prettier settings in `package.json` (single quotes, no semis)
-- After schema changes: update GROQ in `nextjs-simonask.io/src/sanity/queries.ts` and any TypeScript that depends on fields
-
-Extending schema/desk/plugins: `memories/sanity-studio-development.md`. Publish/GROQ/webhooks: `memories/sanity-conventions.md`. Setup: `studio-simonask.io/README.md`
+- Extend Studio: `memories/sanity-studio-development.md`
+- GROQ / publish / webhooks: `memories/sanity-conventions.md`
