@@ -1,6 +1,6 @@
 # simonask.io — agent map
 
-Monorepo: Next.js site + Sanity Studio. **Do not load all memories** — use `memories/INDEX.md` to pick one.
+Monorepo: Next.js site + Sanity Studio. Agent routes context via `memories/INDEX.md` (one memory max; user need not @ files). Prompting tips: `memories/cursor-usage.md`.
 
 | Package | Dev |
 |---------|-----|

@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /**
- * Cursor stop hook: run agent-doc path validation; nudge agent if refs are broken.
+ * Optional Cursor stop hook: run agent-doc path validation; nudge agent if refs are broken.
+ * Disabled by default in .cursor/hooks.json (empty hooks) to avoid extra agent turns.
+ * Re-enable by adding to hooks.json: "stop": [{ "command": "node .cursor/hooks/validate-docs-on-stop.mjs" }]
  */
 import {spawnSync} from 'child_process'
 import path from 'path'

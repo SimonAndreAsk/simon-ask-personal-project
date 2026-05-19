@@ -1,0 +1,54 @@
+# Cursor token usage — prompting workflow
+
+Read when: you want a repeatable way to work with the agent without burning context.
+
+## 1. New chat when…
+
+Start a **new chat** for each discrete job:
+
+| Situation | Example first message |
+|-----------|------------------------|
+| One bug or UI tweak | `Change globals.css --accent to #…` |
+| One feature slice | `Add optional subtitle field to post schema in studio-simonask.io` |
+| Git / PR | `Commit staged changes with message …` / `Open PR to main` |
+| Doc/structure change | `Renamed src/app/blog to posts — update agent docs` |
+
+**Stay in the same chat** only while iterating on the *same* file/PR.
+
+You do **not** need to `@` memories or skills — the agent reads `memories/INDEX.md` and picks context (see workspace rule).
+
+## 2. What you write (no @ required)
+
+| You provide | Agent does |
+|-------------|------------|
+| Task + file path or package | Works from path; may skip extra memory for trivial edits |
+| Task + domain words (deploy, schema, GROQ, commit…) | Reads `memories/INDEX.md`, loads **one** memory or skill |
+| Vague / whole-repo ask | Agent reads INDEX; if nothing fits, **stops and asks** whether to add a new memory |
+| No INDEX match | Agent proposes a new file under memories/ — you choose: create it, proceed without, or clarify |
+
+Optional: `@memories/…` or `@.cursor/skills/…` only to **override** routing (force a specific doc).
+
+## 3. Prompt template
+
+```
+[Task] One sentence: what to change and where.
+[Scope] nextjs-simonask.io | studio-simonask.io + path if you know it
+[Done when] How you’ll verify
+```
+
+**Good:** `In nextjs-simonask.io/src/app/globals.css, set --color-accent to oklch(0.7 0.15 250). Done when hero CTA uses it.`
+
+**Bad:** `Review my workspace and suggest improvements.`
+
+## 4. Before you close a structural task
+
+```bash
+node scripts/validate-agent-docs.mjs
+```
+
+Stop hook is off (`.cursor/hooks.json`) to save tokens.
+
+## 5. Cursor settings (you)
+
+- Short User Rules → `memories/cursor-user-rules-suggested.md`
+- Turn off *Include third-party Plugins, Skills, and other configs* if unused
