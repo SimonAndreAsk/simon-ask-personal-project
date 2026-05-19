@@ -8,7 +8,34 @@ type FigureValue = {
   caption?: string;
   image?: SanityImageSource & { alt?: string };
 };
-type CodeBlockValue = { language?: string; code?: string };
+type CodeSnippet =
+  | string
+  | {
+      code?: string;
+      language?: string;
+    };
+
+type CodeBlockValue = {
+  language?: string;
+  code?: CodeSnippet;
+};
+
+function resolveCodeBlock(block: CodeBlockValue) {
+  const raw = block.code;
+  if (!raw) return null;
+
+  if (typeof raw === "string") {
+    return { text: raw, language: block.language ?? "text" };
+  }
+
+  const text = raw.code;
+  if (!text) return null;
+
+  return {
+    text,
+    language: raw.language ?? block.language ?? "text",
+  };
+}
 
 const components: PortableTextComponents = {
   block: {
@@ -83,12 +110,15 @@ const components: PortableTextComponents = {
       );
     },
     codeBlock: ({ value }) => {
-      const block = value as CodeBlockValue;
-      if (!block.code) return null;
+      const snippet = resolveCodeBlock(value as CodeBlockValue);
+      if (!snippet) return null;
 
       return (
-        <pre className="article-code-block" data-language={block.language ?? "text"}>
-          <code>{block.code}</code>
+        <pre
+          className="article-code-block"
+          data-language={snippet.language}
+        >
+          <code>{snippet.text}</code>
         </pre>
       );
     },

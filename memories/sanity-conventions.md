@@ -14,9 +14,18 @@ Read when: schema, Studio config, GROQ, Presentation preview, or publish/revalid
 
 ## Post document (`post`)
 
-Fields: `title`, `slug`, `publishedAt`, `image`, `body` (`blockContent` portable text).
+Fields: `title`, `slug`, `body` (`blockContent`), `image` (cover — list/social only), `publishedAt`. Studio groups: **Article** / **Publishing**.
 
-**Body components** (insert via + in the body field): text blocks (normal, H2, H3, quote), **Callout**, **Figure**, **Code block**. Schema: `schemaTypes/blockContentType.ts`, `schemaTypes/blocks/`. Site render: `nextjs-simonask.io/src/components/article-body.tsx`.
+**Article body** — type `/` or **+** in the body field: text (normal, H2, H3, quote), **Image** (`figure`), **Callout**, **Code** (`codeBlock`). Schema: `schemaTypes/blockContentType.ts`, `schemaTypes/blocks/`. Site render: `nextjs-simonask.io/src/components/article-body.tsx`.
+
+## Hosted Studio deploy
+
+| Change | Action |
+|--------|--------|
+| Schema or Studio UI | `cd studio-simonask.io && npm run deploy` (not from repo root) |
+| Next.js site only | Git push; Vercel deploy — no Studio deploy |
+
+Hosted Studio: `https://simonaskio.sanity.studio` — must be in Sanity **CORS** (see `studio-simonask.io/README.md`).
 
 Site queries (in Next app `src/sanity/queries.ts`):
 

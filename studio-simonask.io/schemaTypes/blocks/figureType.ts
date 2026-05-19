@@ -1,9 +1,12 @@
+import {ImageIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export const figureType = defineType({
   name: 'figure',
-  title: 'Figure',
+  title: 'Image',
   type: 'object',
+  icon: ImageIcon,
+  description: 'In-article image with optional caption.',
   fields: [
     defineField({
       name: 'image',
@@ -21,6 +24,7 @@ export const figureType = defineType({
     }),
     defineField({
       name: 'caption',
+      title: 'Caption',
       type: 'string',
     }),
   ],
@@ -28,7 +32,7 @@ export const figureType = defineType({
     select: {media: 'image', caption: 'caption'},
     prepare({media, caption}) {
       return {
-        title: caption || 'Figure',
+        title: caption || 'Image',
         media,
       }
     },

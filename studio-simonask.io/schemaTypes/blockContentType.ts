@@ -44,8 +44,8 @@ export const blockContentType = defineType({
         ],
       },
     }),
-    defineArrayMember({type: 'callout'}),
     defineArrayMember({type: 'figure'}),
+    defineArrayMember({type: 'callout'}),
     defineArrayMember({type: 'codeBlock'}),
   ],
 })

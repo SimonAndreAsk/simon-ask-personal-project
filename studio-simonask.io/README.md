@@ -24,8 +24,20 @@ Optional: `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` (or `https://stag
 |---------|-------------|
 | `npm run dev` | Local studio |
 | `npm run build` | Production build |
-| `npm run deploy` | Host studio on `*.sanity.studio` |
+| `npm run deploy` | Host studio on `*.sanity.studio` (run from **this folder**, not repo root) |
 | `npm run start` | Serve production build |
+
+### Deploy hosted Studio
+
+This package is **not** at the monorepo root. From PowerShell:
+
+```powershell
+cd studio-simonask.io
+npm run deploy
+```
+
+- **Schema or Studio UI changed** → `npm run deploy` (updates `*.sanity.studio`)
+- **Next.js site only** → push `main` / `staging` (Vercel); no Studio deploy needed
 
 ## Studio navigation
 
@@ -38,10 +50,17 @@ Optional: `SANITY_STUDIO_PREVIEW_ORIGIN=http://localhost:3000` (or `https://stag
 
 ## Writing workflow
 
-1. **Content → Drafts → Create** — add title, slug, body → **Save**
-2. **Presentation** tab — preview on the site (enable draft mode via the Next.js app)
-3. Check **stage.simonask.io** for draft visibility (staging deployment only)
-4. **Publish** — post appears on **simonask.io** (webhook revalidates the site)
+| Step | Action |
+|------|--------|
+| 1 | **Content → Drafts → Create** (or open a draft) |
+| 2 | **Article** group: title, slug, then write in **Article** body |
+| 3 | In the body editor, type **`/`** or click **+** to insert **Image**, **Callout**, or **Code** |
+| 4 | **Presentation** tab — preview on the site while editing (draft mode on the Next app) |
+| 5 | **Publishing** group: **Cover image** (card/social only), **Published at** |
+| 6 | Check **stage.simonask.io** for draft visibility (staging deployment only) |
+| 7 | **Publish** — post appears on **simonask.io** (webhook revalidates the site) |
+
+**Cover vs in-article images:** **Cover image** is for the post list and social preview. Photos inside the article use **Image** blocks in the body (not the cover field).
 
 Unpublished drafts do **not** appear on production.
 
@@ -49,7 +68,7 @@ Unpublished drafts do **not** appear on production.
 
 **Post** — `schemaTypes/postType.ts`
 
-- `title`, `slug`, `publishedAt`, `image`, `body` (portable text)
+- `title`, `slug`, `body` (`blockContent`), `image` (cover), `publishedAt`
 
 ## CORS
 
@@ -60,7 +79,7 @@ In [sanity.io/manage](https://www.sanity.io/manage) → API → **CORS origins**
 - `https://simonask.io`
 - `https://www.simonask.io`
 - `https://stage.simonask.io`
-- Your `*.sanity.studio` URL if using `npm run deploy`
+- `https://simonaskio.sanity.studio` (hosted Studio; run `npm run deploy` from this folder after schema changes)
 
 ## Presentation tool
 

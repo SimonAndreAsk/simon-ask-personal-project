@@ -1,9 +1,11 @@
+import {InfoOutlineIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export const calloutType = defineType({
   name: 'callout',
   title: 'Callout',
   type: 'object',
+  icon: InfoOutlineIcon,
   fields: [
     defineField({
       name: 'tone',
@@ -30,8 +32,9 @@ export const calloutType = defineType({
   preview: {
     select: {text: 'text', tone: 'tone'},
     prepare({text, tone}) {
+      const firstLine = text?.split('\n')[0]
       return {
-        title: text || 'Callout',
+        title: firstLine || 'Callout',
         subtitle: tone,
       }
     },
