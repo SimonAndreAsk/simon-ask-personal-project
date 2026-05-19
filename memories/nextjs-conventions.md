@@ -29,6 +29,7 @@ import { POSTS_QUERY } from "@/sanity/queries";
 - Tailwind 4 with `@theme inline` mapping CSS variables in `globals.css`
 - Use theme colors: `bg-background`, `text-foreground`, `text-muted`, `text-accent`, `border-border`, `bg-surface`
 - Display font: `font-display` (Fraunces); body: default sans (Geist)
+- Article prose: `.article-*` classes in `globals.css` (portable text from `article-body.tsx`)
 - Dark mode: `html.dark` class via `ThemeProvider` / `ThemeScript` — do not invent a second theme system
 - Open-for-work accent: `open-green` token and `.open-for-work-dot` animation
 

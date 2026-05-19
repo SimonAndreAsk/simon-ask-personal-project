@@ -66,15 +66,16 @@ body {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
-/* Article typography */
+/* Article typography — long-form reading (~65ch within max-w-2xl page) */
 .article-body {
-  font-size: 1.0625rem;
-  line-height: 1.75;
+  max-width: 65ch;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: color-mix(in oklab, var(--foreground) 92%, transparent);
 }
 
 .article-p {
-  margin-top: 1.25em;
-  color: color-mix(in oklab, var(--foreground) 88%, transparent);
+  margin-top: 1.5em;
 }
 
 .article-p:first-child {
@@ -82,21 +83,28 @@ body {
 }
 
 .article-h2 {
-  margin-top: 2.5em;
-  margin-bottom: 0.75em;
+  margin-top: 2.75em;
+  margin-bottom: 0.65em;
+  scroll-margin-top: 5rem;
   font-family: var(--font-fraunces), Georgia, serif;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 1.75rem);
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.3;
   color: var(--foreground);
 }
 
+.article-h2 + .article-p,
+.article-h3 + .article-p {
+  margin-top: 0.75em;
+}
+
 .article-h3 {
-  margin-top: 2em;
+  margin-top: 2.25em;
   margin-bottom: 0.5em;
+  scroll-margin-top: 5rem;
   font-family: var(--font-fraunces), Georgia, serif;
-  font-size: 1.25rem;
+  font-size: 1.3125rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.35;
@@ -104,18 +112,19 @@ body {
 }
 
 .article-blockquote {
-  margin: 1.75em 0;
-  padding-left: 1.25em;
-  border-left: 2px solid var(--accent);
+  margin: 2em 0;
+  padding-left: 1.5em;
+  border-left: 3px solid var(--accent);
+  font-size: 1.0625rem;
   font-style: italic;
+  line-height: 1.65;
   color: var(--muted);
 }
 
 .article-ul,
 .article-ol {
-  margin: 1.25em 0;
-  padding-left: 1.5em;
-  color: color-mix(in oklab, var(--foreground) 88%, transparent);
+  margin: 1.5em 0;
+  padding-left: 1.625em;
 }
 
 .article-ul {
@@ -128,14 +137,19 @@ body {
 
 .article-ul li,
 .article-ol li {
-  margin-top: 0.5em;
+  margin-top: 0.65em;
+}
+
+.article-ul li:first-child,
+.article-ol li:first-child {
+  margin-top: 0;
 }
 
 .article-link {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: color-mix(in oklab, var(--accent) 40%, transparent);
+  text-decoration-color: color-mix(in oklab, var(--accent) 45%, transparent);
   transition: color 0.15s, text-decoration-color 0.15s;
 }
 
@@ -144,17 +158,25 @@ body {
   text-decoration-color: var(--accent-hover);
 }
 
+.article-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .article-inline-code {
-  padding: 0.15em 0.4em;
+  padding: 0.2em 0.45em;
   border-radius: 0.25rem;
+  border: 1px solid var(--border);
   background: var(--surface);
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 0.875em;
+  font-size: 0.9em;
+  color: var(--foreground);
 }
 
 .article-callout {
-  margin: 1.75em 0;
-  padding: 1rem 1.25rem;
+  margin: 2em 0;
+  padding: 1.125rem 1.375rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -162,19 +184,25 @@ body {
 
 .article-callout-text {
   margin: 0;
-  color: color-mix(in oklab, var(--foreground) 88%, transparent);
+  line-height: 1.65;
+}
+
+.article-callout--note {
+  background: var(--surface);
 }
 
 .article-callout--info {
-  border-color: color-mix(in oklab, var(--accent) 35%, var(--border));
+  border-color: color-mix(in oklab, var(--accent) 40%, var(--border));
+  background: color-mix(in oklab, var(--accent) 8%, var(--surface));
 }
 
 .article-callout--warning {
-  border-color: color-mix(in oklab, #ca8a04 40%, var(--border));
+  border-color: color-mix(in oklab, #ca8a04 45%, var(--border));
+  background: color-mix(in oklab, #ca8a04 10%, var(--surface));
 }
 
 .article-figure {
-  margin: 2em 0;
+  margin: 2.25em 0;
 }
 
 .article-figure-img {
@@ -186,20 +214,27 @@ body {
 }
 
 .article-figure-caption {
-  margin-top: 0.75em;
+  margin-top: 0.875em;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
   color: var(--muted);
 }
 
 .article-code-block {
-  margin: 1.75em 0;
+  margin: 2em 0;
   overflow-x: auto;
-  padding: 1rem 1.25rem;
+  padding: 1.125rem 1.25rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border);
   background: var(--surface);
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  tab-size: 2;
+  color: var(--foreground);
+}
+
+.article-code-block code {
+  font-family: inherit;
 }

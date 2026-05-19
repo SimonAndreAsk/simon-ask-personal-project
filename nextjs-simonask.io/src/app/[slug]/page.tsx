@@ -72,8 +72,8 @@ export default async function PostPage({ params }: PageProps) {
         </p>
       )}
 
-      <article>
-        <header className="mb-10">
+      <article className="article-page">
+        <header className="mb-10 sm:mb-12">
           <time
             dateTime={post.publishedAt}
             className="text-sm text-muted tabular-nums"
@@ -88,8 +88,8 @@ export default async function PostPage({ params }: PageProps) {
         {postImageUrl && (
           <img
             src={postImageUrl}
-            alt=""
-            className="mb-10 aspect-[16/9] w-full rounded-lg object-cover"
+            alt={typeof post.title === "string" ? post.title : "Article cover"}
+            className="mb-12 aspect-[16/9] w-full rounded-lg object-cover"
             width={1200}
             height={630}
           />
