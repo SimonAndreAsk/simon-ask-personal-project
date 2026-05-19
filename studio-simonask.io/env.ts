@@ -2,7 +2,7 @@ function required(name: string): string {
   const value = process.env[name]
   if (!value) {
     throw new Error(
-      `Missing ${name}. Copy .env.example to .env.local and set your Sanity project ID.`,
+      `Missing ${name}. For local dev: copy .env.example to .env.local. For deploy: set in .env.production or sanity.io/manage → Studios → Environment variables.`,
     )
   }
   return value

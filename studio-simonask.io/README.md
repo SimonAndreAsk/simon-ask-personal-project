@@ -12,7 +12,9 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Set `SANITY_STUDIO_PROJECT_ID` and `SANITY_STUDIO_DATASET` in `.env.local` before running.
+For **local dev**, copy `.env.example` → `.env.local` and set your project ID.
+
+**Hosted deploy** (`npm run deploy`) uses [`.env.production`](.env.production) (committed public project ID). Override locally with `.env.local` if needed.
 
 Open [http://localhost:3333](http://localhost:3333).
 
