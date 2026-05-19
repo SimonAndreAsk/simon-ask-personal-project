@@ -1,4 +1,14 @@
+import { type SanityImageSource } from "@sanity/image-url";
 import { PortableText, type PortableTextComponents } from "next-sanity";
+
+import { urlFor } from "@/sanity/image";
+
+type CalloutValue = { tone?: string; text?: string };
+type FigureValue = {
+  caption?: string;
+  image?: SanityImageSource & { alt?: string };
+};
+type CodeBlockValue = { language?: string; code?: string };
 
 const components: PortableTextComponents = {
   block: {
@@ -39,6 +49,49 @@ const components: PortableTextComponents = {
     code: ({ children }) => (
       <code className="article-inline-code">{children}</code>
     ),
+  },
+  types: {
+    callout: ({ value }) => {
+      const callout = value as CalloutValue;
+      if (!callout.text) return null;
+
+      const tone = callout.tone ?? "note";
+
+      return (
+        <aside className={`article-callout article-callout--${tone}`} role="note">
+          <p className="article-callout-text">{callout.text}</p>
+        </aside>
+      );
+    },
+    figure: ({ value }) => {
+      const figure = value as FigureValue;
+      if (!figure.image) return null;
+
+      const imageUrl = urlFor(figure.image)?.width(1200).url();
+      const alt = figure.image.alt ?? figure.caption ?? "";
+
+      if (!imageUrl) return null;
+
+      return (
+        <figure className="article-figure">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={imageUrl} alt={alt} className="article-figure-img" />
+          {figure.caption ? (
+            <figcaption className="article-figure-caption">{figure.caption}</figcaption>
+          ) : null}
+        </figure>
+      );
+    },
+    codeBlock: ({ value }) => {
+      const block = value as CodeBlockValue;
+      if (!block.code) return null;
+
+      return (
+        <pre className="article-code-block" data-language={block.language ?? "text"}>
+          <code>{block.code}</code>
+        </pre>
+      );
+    },
   },
 };
 

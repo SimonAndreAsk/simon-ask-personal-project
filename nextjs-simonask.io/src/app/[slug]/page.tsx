@@ -1,4 +1,3 @@
-import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
 import Link from "next/link";
 import { type SanityDocument } from "next-sanity";
 import { notFound } from "next/navigation";
@@ -8,16 +7,11 @@ import { ArticleBody } from "@/components/article-body";
 import { formatDate } from "@/lib/format";
 import { client } from "@/sanity/client";
 import { isStagingSite } from "@/sanity/env";
+import { urlFor } from "@/sanity/image";
 import { sanityFetch } from "@/sanity/load";
 import { POST_QUERY, SLUGS_QUERY } from "@/sanity/queries";
 
 const options = { next: { revalidate: 30 } };
-
-const { projectId, dataset } = client.config();
-const urlFor = (source: SanityImageSource) =>
-  projectId && dataset
-    ? createImageUrlBuilder({ projectId, dataset }).image(source)
-    : null;
 
 type PageProps = {
   params: Promise<{ slug: string }>;
