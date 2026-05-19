@@ -79,7 +79,9 @@ In [sanity.io/manage](https://www.sanity.io/manage) → API → **CORS origins**
 - `https://simonask.io`
 - `https://www.simonask.io`
 - `https://stage.simonask.io`
-- `https://simonaskio.sanity.studio` (hosted Studio; run `npm run deploy` from this folder after schema changes)
+- `https://simonask.sanity.studio` (hosted Studio — use this URL; run `npm run deploy` from this folder after schema changes)
+
+Do not use `simonaskio.sanity.studio` (created by mistake during an early deploy; you can remove it in [sanity.io/manage](https://www.sanity.io/manage) → Studios).
 
 ## Presentation tool
 

@@ -25,7 +25,7 @@ Fields: `title`, `slug`, `body` (`blockContent`), `image` (cover — list/social
 | Schema or Studio UI | `cd studio-simonask.io && npm run deploy` (not from repo root) |
 | Next.js site only | Git push; Vercel deploy — no Studio deploy |
 
-Hosted Studio: `https://simonaskio.sanity.studio` — must be in Sanity **CORS** (see `studio-simonask.io/README.md`).
+Hosted Studio: `https://simonask.sanity.studio` — must be in Sanity **CORS** (see `studio-simonask.io/README.md`).
 
 Site queries (in Next app `src/sanity/queries.ts`):
 
