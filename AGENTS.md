@@ -26,6 +26,8 @@ Details: root `README.md` and each app’s `README.md`.
 | `memories/architecture.md` | Cross-app flow, env, deploy, preview |
 | `memories/nextjs-conventions.md` | UI, styling, components, routing |
 | `memories/sanity-conventions.md` | Schema, Studio, GROQ, webhooks |
+| `memories/sanity-studio-development.md` | Extend Studio (types, fields, desk, plugins) |
+| `memories/refine-prompt.md` | Refine or structure a prompt before a new task |
 
 Do not read all memory files. Open at most 1–2 relevant to the task.
 

@@ -7,7 +7,9 @@ Project-specific context for agents. **Do not read every file** — pick at most
 | [architecture.md](./architecture.md) | Deploy, env vars, staging vs production, draft preview, webhooks |
 | [nextjs-conventions.md](./nextjs-conventions.md) | Pages, components, styling, theme, Sanity fetch on the site |
 | [sanity-conventions.md](./sanity-conventions.md) | Schema, Studio, GROQ, Presentation, publishing |
+| [sanity-studio-development.md](./sanity-studio-development.md) | New types, fields, desk, plugins, Presentation in Studio |
 | [decisions.md](./decisions.md) | Why something was built a certain way |
+| [refine-prompt.md](./refine-prompt.md) | User wants a prompt refined (Identity, Task, Context, Constraints, Output) |
 
 ## Not duplicated here
 
