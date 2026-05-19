@@ -27,7 +27,8 @@ export const postType = defineType({
       title: 'Article',
       type: 'blockContent',
       group: 'article',
-      description: 'Type / or click + to insert Image, Callout, or Code.',
+      description:
+        'Press Enter for a new line, then click the + on the left of that line to insert Image, Callout, or Code. Typing /callout in the text does not work.',
     }),
     defineField({
       name: 'image',
