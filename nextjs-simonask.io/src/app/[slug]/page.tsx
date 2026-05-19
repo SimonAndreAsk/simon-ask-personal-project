@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: post.title,
-    description: `An article by Simon Ask, published ${formatDate(post.publishedAt)}.`,
+    description: `My notes from the work behind this piece—published ${formatDate(post.publishedAt)}.`,
   };
 }
 

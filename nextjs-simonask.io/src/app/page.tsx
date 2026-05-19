@@ -18,16 +18,20 @@ export default async function HomePage() {
           Hi, I&apos;m Simon.
         </h1>
         <p className="mt-4 max-w-lg text-lg leading-relaxed text-muted">
-          This is my digital home. Here, I write about what I&apos;m learning
-          while exploring digital analytics, AI, and related topics in my free
-          time.
+          I write about what I&apos;m actually building and learning in digital
+          analytics and on the web. I share what I tried, what worked, and what
+          I&apos;d do differently, so you can move faster and avoid the
+          detours I already took.
         </p>
       </section>
 
       <section id="articles">
-        <h2 className="mb-6 font-display text-2xl tracking-tight text-foreground">
+        <h2 className="mb-2 font-display text-2xl tracking-tight text-foreground">
           Articles
         </h2>
+        <p className="mb-6 max-w-lg text-sm leading-relaxed text-muted">
+          Build logs, decisions, and reflections from my own projects.
+        </p>
         <PostList posts={posts} />
       </section>
     </main>

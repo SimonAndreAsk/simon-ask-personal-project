@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s · Simon Ask",
   },
   description:
-    "Writing by Simon Ask on digital analytics and what he's learning along the way.",
+    "I write about what I'm building and learning in digital analytics and on the web—specific notes from my work, for people on a similar path.",
 };
 
 export default function RootLayout({

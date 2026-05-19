@@ -12,8 +12,8 @@ export function SiteFooter() {
           Simon Ask
         </p>
         <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">
-          Exploring digital analytics, the web, and AI — ideas, experiments,
-          and learning in public.
+          I write about digital analytics and the web—notes from my work, for
+          anyone walking a similar path.
         </p>
         <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted">
           <Link
