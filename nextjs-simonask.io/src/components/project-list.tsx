@@ -88,28 +88,33 @@ export function ProjectList({ projects }: { projects: SanityDocument[] }) {
                 )}
               </div>
               <div className="min-w-0">
-                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                  <h3 className="font-display text-lg leading-snug tracking-tight text-foreground transition-colors group-hover:text-open-green sm:text-xl">
-                    {project.title}
-                  </h3>
-                  {draft && (
-                    <span className="rounded-full border border-open-green/40 bg-open-green/10 px-2 py-0.5 text-xs text-open-green">
-                      Draft
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <h3 className="font-display text-lg leading-snug tracking-tight text-foreground transition-colors group-hover:text-open-green sm:text-xl">
+                      {project.title}
+                    </h3>
+                    {draft && (
+                      <span className="rounded-full border border-open-green/40 bg-open-green/10 px-2 py-0.5 text-xs text-open-green">
+                        Draft
+                      </span>
+                    )}
+                  </div>
+                  {href ? (
+                    <span
+                      className="inline-flex shrink-0 items-center gap-1 pt-0.5 text-sm font-medium text-muted opacity-0 transition-[opacity,color,transform] duration-200 group-hover:opacity-100 group-hover:text-open-green group-focus-visible:opacity-100 [@media(hover:none)]:opacity-100"
+                      aria-hidden
+                    >
+                      <span>{linkLabel}</span>
+                      <SiteIcon
+                        icon={ArrowRight}
+                        className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5"
+                      />
                     </span>
-                  )}
+                  ) : null}
                 </div>
                 {typeof project.summary === "string" && project.summary.trim() ? (
                   <p className="mt-2 text-sm leading-relaxed text-muted group-hover:text-foreground/80">
                     {project.summary}
-                  </p>
-                ) : null}
-                {href ? (
-                  <p className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-muted transition-colors group-hover:text-open-green">
-                    <span>{linkLabel}</span>
-                    <SiteIcon
-                      icon={ArrowRight}
-                      className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5"
-                    />
                   </p>
                 ) : null}
               </div>
