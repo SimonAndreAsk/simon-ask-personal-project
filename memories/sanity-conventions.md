@@ -24,6 +24,8 @@ Fields: `title`, `url` (external link), optional `summary`, optional `image` (ho
 
 ## Hosted Studio deploy
 
+User phrase: **Deploy Sanity** → `memories/deploy-sanity.md`.
+
 | Change | Action |
 |--------|--------|
 | Schema or Studio UI | `cd studio-simonask.io && npm run deploy` (not from repo root) |
@@ -47,6 +49,13 @@ Configured in `sanity.config.ts`:
 - Preview origin: `SANITY_STUDIO_PREVIEW_ORIGIN` (default `http://localhost:3000`)
 - Draft mode: `/api/draft-mode/enable` and `/disable` on the Next app
 - Allowed origins include localhost, stage.simonask.io, simonask.io
+
+Next app (required for Studio iframe connection):
+
+- `layout.tsx` mounts `VisualEditing` from `next-sanity/visual-editing` when Draft Mode is on
+- `client.ts` sets `stega.studioUrl` (`NEXT_PUBLIC_SANITY_STUDIO_URL`); preview fetches use token + stega via `load.ts`
+- `SANITY_API_READ_TOKEN` (Viewer) must be set in `nextjs-simonask.io/.env.local`
+- Sanity CORS: `http://localhost:3000` with **Allow credentials** (and deployed site URLs for prod)
 
 ## Publishing
 

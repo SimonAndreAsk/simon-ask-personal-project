@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = await sanityFetch<SanityDocument | null>(
     POST_QUERY,
     { slug },
-    options,
+    { ...options, stega: false },
   );
 
   if (!post) return { title: "Not found" };

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { draftMode } from "next/headers";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { VisualEditing } from "next-sanity/visual-editing";
 
+import { DisableDraftMode } from "@/components/disable-draft-mode";
 import { ScrollToHash } from "@/components/scroll-to-hash";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -34,11 +37,13 @@ export const metadata: Metadata = {
     "Personal portfolio — digital analytics and the web. Writing that shows how I work.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { isEnabled: isDraftMode } = await draftMode();
+
   return (
     <html
       lang="en"
@@ -51,6 +56,12 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <SpeedInsights />
+        {isDraftMode && (
+          <>
+            <VisualEditing />
+            <DisableDraftMode />
+          </>
+        )}
       </body>
     </html>
   );

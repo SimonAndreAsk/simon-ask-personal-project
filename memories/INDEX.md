@@ -17,6 +17,7 @@ Project-specific context for agents. **Do not read every file** — pick **at mo
 | [refine-prompt.md](./refine-prompt.md) | refine prompt, improve my prompt, 5-part framework |
 | [cursor-usage.md](./cursor-usage.md) | token usage, how to prompt, new chat workflow |
 | [go-live.md](./go-live.md) | **Go Live**, go live, ship to staging and main, deploy site |
+| [deploy-sanity.md](./deploy-sanity.md) | **Deploy Sanity**, deploy sanity, deploy studio, hosted studio, sanity deploy |
 
 ## Skills (`.cursor/skills/`)
 

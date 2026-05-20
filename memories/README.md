@@ -10,6 +10,7 @@ Project notes for **Cursor** and for you when conventions matter. Files are shor
 | [cursor-usage.md](./cursor-usage.md) | How to prompt Cursor on this repo |
 | [architecture.md](./architecture.md) | Deploy, branches, env names, staging vs prod |
 | [go-live.md](./go-live.md) | Ship code: **Go Live** workflow |
+| [deploy-sanity.md](./deploy-sanity.md) | Ship Studio: **Deploy Sanity** workflow |
 
 ## By app
 
