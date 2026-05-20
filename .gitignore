@@ -1,4 +1,4 @@
-# Local-only (not shared): content voice, drafts, private skills
+# Local-only (not shared): private notes, drafts, experiments
 .local/
 
 # Dependencies

@@ -89,18 +89,26 @@ Redeploy after changing env vars.
 ```
 src/
   app/
-    page.tsx              # Home + article list
+    page.tsx              # Home (experience, education, projects, writing)
     [slug]/page.tsx       # Article pages
-    api/draft-mode/       # Draft preview
+    layout.tsx            # Shell: header, footer, fonts, staging banner
+    globals.css           # Design tokens + article typography
+    api/draft-mode/       # Draft preview (Presentation)
     api/revalidate/       # Webhook handler
     api/contact/          # Contact form (Resend)
-  components/             # Header, footer, post list, hero CTAs, etc.
-  lib/                    # Contact email, date formatting
+  components/             # site-header/footer, post-list, project-list, contact-aside, etc.
+  lib/
+    contact.ts            # Public email / phone
+    profile.ts            # Education + experience copy
+    sections.ts           # Home section ids + hash links
+    format.ts             # Dates
+    scroll-to-section.ts  # Hash navigation helper
   sanity/
     client.ts             # Sanity client
     load.ts               # Draft-aware fetch helper
     queries.ts            # GROQ queries
     env.ts                # Project config + staging flag
+    image.ts              # Image URL builder
 ```
 
 ## Contact
