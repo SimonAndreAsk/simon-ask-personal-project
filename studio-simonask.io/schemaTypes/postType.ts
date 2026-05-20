@@ -23,6 +23,15 @@ export const postType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      rows: 3,
+      group: 'article',
+      description:
+        'Short preview on the homepage writing list. If empty, the first paragraph of the article is used.',
+    }),
+    defineField({
       name: 'body',
       title: 'Article',
       type: 'blockContent',

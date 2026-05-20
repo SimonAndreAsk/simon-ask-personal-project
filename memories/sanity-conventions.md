@@ -14,13 +14,17 @@ Read when: schema, Studio config, GROQ, Presentation preview, or publish/revalid
 
 ## Post document (`post`)
 
-Fields: `title`, `slug`, `body` (`blockContent`), `image` (cover — list/social only), `publishedAt`. Studio groups: **Article** / **Publishing**.
+Fields: `title`, `slug`, optional `excerpt` (homepage preview; falls back to first paragraph of `body`), `body` (`blockContent`), `image` (cover — list/social only), `publishedAt`. Studio groups: **Article** / **Publishing**.
 
 **Article body** — structured blocks (not shortcodes): use **⋯** insert menu or `@selvklart/sanity-block-selector` picker on the field. Types: text (normal, H2, H3, quote), **Image** (`figure`), **Callout**, **Code** (`codeBlock`). Do not type `/callout` in prose. Schema: `blockContentType.ts`, `blockContentInput.ts`, `blocks/`. Site: `article-body.tsx`.
 
 ## Project document (`project`)
 
-Fields: `title`, `url` (external link), optional `summary`, optional `image` (homepage thumbnail, 1:1, hotspot), `publishedAt` (ordering). Studio: **Details** group. Listed on site home (`/#projects`); Presentation resolves to `/#projects`.
+Fields: `title`, `url` (external link), optional `tags` (references to `projectTag`), optional `summary`, optional `image` (homepage thumbnail, 1:1, hotspot), `publishedAt` (ordering). Studio: **Details** group. Listed on site home (`/#projects`); Presentation resolves to `/#projects`.
+
+## Project tag document (`projectTag`)
+
+Fields: `label` (tool name), `backgroundColor` (Sanity color picker). Reusable across projects. Studio sidebar: **Project tags**. Homepage: pills above project title (`project-tags.tsx`).
 
 ## Experience document (`experience`)
 

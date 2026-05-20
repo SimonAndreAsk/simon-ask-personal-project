@@ -21,6 +21,15 @@ export const projectType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'tags',
+      title: 'Tools & tags',
+      type: 'array',
+      group: 'details',
+      of: [{type: 'reference', to: [{type: 'projectTag'}]}],
+      description:
+        'Tools or technologies used on this project. Create tags under Project tags in the sidebar, then pick them here.',
+    }),
+    defineField({
       name: 'summary',
       title: 'Summary',
       type: 'text',

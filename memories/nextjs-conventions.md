@@ -45,8 +45,9 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 | `phone-contact-link` | `tel:` link; optional visible number (footer) |
 | `hero-contact-actions` | Home hero: Get in Touch + LinkedIn |
 | `staging-banner` | Shown on staging env |
-| `post-list` | Home writing listing |
-| `project-list` | Home projects — rounded thumbnail, summary, contextual link label (`project-link.ts`) |
+| `post-list` | Home writing listing — cover thumb, excerpt, read time, “Read article” |
+| `project-list` | Home projects — tags, thumbnail, summary, contextual link label |
+| `project-tags` | Colored tool pills from Sanity `projectTag` |
 | `contact-aside`, `contact-quick-links` | Footer contact column — portrait, open-for-work, email / phone / LinkedIn |
 | `contact-form` | Name / email / message form in footer → `POST /api/contact` (Resend) |
 | `experience-section`, `education-section` | Home CV blocks (`/#experience`, `/#education`); experience from Sanity |

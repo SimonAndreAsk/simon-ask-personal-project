@@ -38,14 +38,14 @@ export function ProfileTimeline({
           className={[
             "group cursor-default border-b border-border/40 py-5 transition-colors duration-200",
             showLogos
-              ? "grid grid-cols-[3rem_1fr] items-stretch gap-x-4"
+              ? "flex flex-col gap-3 sm:grid sm:grid-cols-[3rem_1fr] sm:items-stretch sm:gap-x-4"
               : "",
           ]
             .filter(Boolean)
             .join(" ")}
         >
           {showLogos && entry.logo ? (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-start sm:items-center">
               <CompanyLogo
                 src={entry.logo.src}
                 alt={entry.logo.alt}
@@ -54,13 +54,13 @@ export function ProfileTimeline({
               />
               {showConnector ? (
                 <div
-                  className="mt-0 w-px min-h-6 flex-1 bg-gradient-to-b from-border/80 via-border/50 to-border/80 transition-colors duration-200 group-hover:from-open-green/35 group-hover:via-open-green/20 group-hover:to-border/60"
+                  className="mt-0 hidden w-px min-h-6 flex-1 bg-gradient-to-b from-border/80 via-border/50 to-border/80 transition-colors duration-200 group-hover:from-open-green/35 group-hover:via-open-green/20 group-hover:to-border/60 sm:block"
                   aria-hidden
                 />
               ) : null}
             </div>
           ) : showLogos ? (
-            <span className="size-12 shrink-0" aria-hidden />
+            <span className="hidden size-12 shrink-0 sm:block" aria-hidden />
           ) : null}
           <div className="min-w-0">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">

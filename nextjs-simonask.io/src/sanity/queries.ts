@@ -1,6 +1,14 @@
 export const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`
 
-export const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc)`
+export const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  publishedAt,
+  image,
+  excerpt,
+  "excerptText": coalesce(excerpt, pt::text(body))
+}`
 
 export const SLUGS_QUERY = `*[_type == "post" && defined(slug.current)].slug.current`
 
@@ -11,7 +19,12 @@ export const PROJECTS_QUERY = `*[_type == "project" && defined(url)] | order(pub
   url,
   summary,
   publishedAt,
-  image
+  image,
+  "tags": tags[]-> {
+    _id,
+    label,
+    backgroundColor
+  }
 }`
 
 /** Homepage experience timeline — ordered by sort date (most recent first). */
