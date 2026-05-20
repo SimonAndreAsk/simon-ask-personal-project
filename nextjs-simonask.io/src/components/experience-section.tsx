@@ -14,7 +14,11 @@ export function ExperienceSection() {
         Work and internships — latest first.
       </p>
       <div className="mt-8">
-        <ProfileTimeline entries={experience} emptyMessage="" />
+        <ProfileTimeline
+          entries={experience}
+          emptyMessage=""
+          showProgressLine
+        />
       </div>
     </section>
   );

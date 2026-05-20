@@ -6,6 +6,8 @@ export type ProfileEntry = {
   subtitle?: string;
   period?: string;
   href?: string;
+  /** Round logo beside the title (experience). `src` under `public/logos/`. */
+  logo?: { src?: string; alt: string };
   /** Prose body (e.g. education summary). */
   description?: string;
   details?: string[];
@@ -18,6 +20,7 @@ export const ihmDigitalAnalyticsProgramUrl =
 export const education: ProfileEntry[] = [
   {
     title: "IHM Business School",
+    logo: { alt: "IHM Business School" },
     subtitle: "Digital Analytics Specialist",
     period: "2024–2026",
     href: ihmDigitalAnalyticsProgramUrl,
@@ -29,6 +32,7 @@ export const education: ProfileEntry[] = [
 export const experience: ProfileEntry[] = [
   {
     title: "Hi3G Access AB (Tre)",
+    logo: { alt: "Tre" },
     subtitle: "Data Specialist · internship",
     period: "Mar 2026–Jun 2026",
     details: [
@@ -37,6 +41,7 @@ export const experience: ProfileEntry[] = [
   },
   {
     title: "Nexer Group",
+    logo: { alt: "Nexer Group" },
     subtitle: "Digital Analytics Specialist · internship",
     period: "Sep 2025–Dec 2025",
     details: [
@@ -45,6 +50,7 @@ export const experience: ProfileEntry[] = [
   },
   {
     title: "Skandinaviska Enskilda Banken (SEB)",
+    logo: { alt: "SEB" },
     subtitle: "Service Manager",
     period: "Jan 2022–Aug 2024",
     details: [

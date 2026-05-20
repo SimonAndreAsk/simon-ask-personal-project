@@ -51,6 +51,7 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 | `contact-form` | Name / email / message form in footer → `POST /api/contact` (Resend) |
 | `experience-section`, `education-section` | Home CV blocks (`/#experience`, `/#education`) |
 | `profile-timeline` | Shared list for profile entries |
+| `company-logo` | Round 48px employer logo beside experience titles (`public/logos/`, `profile.ts`) |
 | `article-body` | Portable text rendering |
 | `hero-intro-meta`, `location-label`, `open-for-work-label` | Hero location + hiring status |
 
