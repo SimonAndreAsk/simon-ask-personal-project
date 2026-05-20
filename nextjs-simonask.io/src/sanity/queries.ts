@@ -13,3 +13,16 @@ export const PROJECTS_QUERY = `*[_type == "project" && defined(url)] | order(pub
   publishedAt,
   image
 }`
+
+/** Homepage experience timeline — ordered by sort date (most recent first). */
+export const EXPERIENCE_QUERY = `*[_type == "experience" && defined(title)] | order(publishedAt desc) {
+  _id,
+  title,
+  subtitle,
+  period,
+  href,
+  logoAlt,
+  logoImage,
+  details,
+  publishedAt
+}`

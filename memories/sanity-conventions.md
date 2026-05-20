@@ -22,6 +22,10 @@ Fields: `title`, `slug`, `body` (`blockContent`), `image` (cover — list/social
 
 Fields: `title`, `url` (external link), optional `summary`, optional `image` (homepage thumbnail, 1:1, hotspot), `publishedAt` (ordering). Studio: **Details** group. Listed on site home (`/#projects`); Presentation resolves to `/#projects`.
 
+## Experience document (`experience`)
+
+Fields: `title` (organization), optional `subtitle` (role), optional `period`, optional `href`, required `logoAlt`, optional `logoImage`, optional `details` (string array), `publishedAt` (sort date — homepage lists most recent first). Studio: **Details** group. Listed on site home (`/#experience`); Presentation resolves to `/#experience`.
+
 ## Hosted Studio deploy
 
 User phrase: **Deploy Sanity** → `memories/deploy-sanity.md`.
@@ -39,6 +43,7 @@ Site queries (in Next app `src/sanity/queries.ts`):
 - `POST_QUERY` — single post by slug
 - `SLUGS_QUERY` — static params for `[slug]`
 - `PROJECTS_QUERY` — all projects with `url`, ordered by `publishedAt desc` (homepage)
+- `EXPERIENCE_QUERY` — all experience entries, ordered by `publishedAt desc` (homepage)
 
 When adding fields: update schema → GROQ → any components that render the field (e.g. `article-body.tsx`).
 
@@ -68,7 +73,7 @@ Next app (required for Studio iframe connection):
 | Do | Don't |
 |----|-------|
 | Register new types in `schemaTypes/index.ts` | Commit `.env` or API tokens |
-| Keep slug required and sourced from title on `post` | Change `_type` name `post` or `project` without updating GROQ and webhook handler |
+| Keep slug required and sourced from title on `post` | Change `_type` name `post`, `project`, or `experience` without updating GROQ and webhook handler |
 | Run Studio from `studio-simonask.io` | Duplicate Sanity project config inside the Next app (use `env.ts` in each package) |
 
-Webhook handler special-cases `_type === "post"` (home + slug path) and `_type === "project"` (home); other types revalidate layout root.
+Webhook handler special-cases `_type === "post"` (home + slug path), `_type === "project"` and `_type === "experience"` (home); other types revalidate layout root.

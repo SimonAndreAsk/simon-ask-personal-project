@@ -38,4 +38,12 @@ export const structure: StructureResolver = (S) =>
             .filter('_type == "project"')
             .defaultOrdering([{field: 'publishedAt', direction: 'desc'}]),
         ),
+      S.listItem()
+        .title('Experience')
+        .child(
+          S.documentList()
+            .title('Experience')
+            .filter('_type == "experience"')
+            .defaultOrdering([{field: 'publishedAt', direction: 'desc'}]),
+        ),
     ])

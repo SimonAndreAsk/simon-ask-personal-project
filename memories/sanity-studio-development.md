@@ -54,9 +54,9 @@ Also touch Next.js when the type should appear on simonask.io:
 
 ## Desk & Presentation
 
-**Desk:** Drafts / Published / All posts filter `_type == "post"`. **Projects** list filters `_type == "project"`. New types → `S.listItem()` + `S.documentList()` in `structure.ts`.
+**Desk:** Drafts / Published / All posts filter `_type == "post"`. **Projects** list filters `_type == "project"`. **Experience** list filters `_type == "experience"`. New types → `S.listItem()` + `S.documentList()` in `structure.ts`.
 
-**Presentation:** `post` → `/${slug.current}` and `/`. `project` → `/#projects` and `/` in `presentation/resolve.ts`. New previewable types need a `locations.<type>` entry and a real Next route. Preview URLs: `sanity.config.ts`.
+**Presentation:** `post` → `/${slug.current}` and `/`. `project` → `/#projects` and `/`. `experience` → `/#experience` and `/` in `presentation/resolve.ts`. New previewable types need a `locations.<type>` entry and a real Next route. Preview URLs: `sanity.config.ts`.
 
 ---
 

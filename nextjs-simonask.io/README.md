@@ -101,7 +101,8 @@ src/
   components/             # site-header/footer, post-list, project-list, contact-aside, etc.
   lib/
     contact.ts            # Public email / phone
-    profile.ts            # Education + experience copy
+    profile.ts            # Education copy; experience types
+    experience.ts         # Sanity experience → profile timeline
     sections.ts           # Home section ids + hash links
     format.ts             # Dates
     scroll-to-section.ts  # Hash navigation helper

@@ -37,5 +37,22 @@ export const resolve: PresentationPluginOptions['resolve'] = {
         ],
       }),
     }),
+    experience: defineLocations({
+      select: {
+        title: 'title',
+      },
+      resolve: (doc) => ({
+        locations: [
+          {
+            title: doc?.title || 'Experience',
+            href: '/#experience',
+          },
+          {
+            title: 'Home',
+            href: '/',
+          },
+        ],
+      }),
+    }),
   },
 }

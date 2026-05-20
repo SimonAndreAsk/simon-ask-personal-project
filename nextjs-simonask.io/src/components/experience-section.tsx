@@ -1,7 +1,7 @@
 import { ProfileTimeline } from "@/components/profile-timeline";
-import { experience } from "@/lib/profile";
+import type { ProfileEntry } from "@/lib/profile";
 
-export function ExperienceSection() {
+export function ExperienceSection({ entries }: { entries: ProfileEntry[] }) {
   return (
     <section className="mb-20 sm:mb-24">
       <h2
@@ -15,8 +15,8 @@ export function ExperienceSection() {
       </p>
       <div className="mt-8">
         <ProfileTimeline
-          entries={experience}
-          emptyMessage=""
+          entries={entries}
+          emptyMessage="No experience entries yet."
           showProgressLine
         />
       </div>

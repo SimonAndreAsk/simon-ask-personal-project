@@ -7,8 +7,9 @@ import { HeroIntroMeta, HeroMobileLocationRow } from "@/components/hero-intro-me
 import { PostList } from "@/components/post-list";
 import { ProjectList } from "@/components/project-list";
 import { SectionLink } from "@/components/section-link";
+import { experienceEntriesFromSanity } from "@/lib/experience";
 import { sanityFetch } from "@/sanity/load";
-import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
+import { EXPERIENCE_QUERY, POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 import { SITE_SECTIONS, sectionHref } from "@/lib/sections";
 
 const introLinkClass = "intro-inline-link";
@@ -16,10 +17,12 @@ const introLinkClass = "intro-inline-link";
 const options = { next: { revalidate: 30 } };
 
 export default async function HomePage() {
-  const [posts, projects] = await Promise.all([
+  const [posts, projects, experienceDocs] = await Promise.all([
     sanityFetch<SanityDocument[]>(POSTS_QUERY, {}, options),
     sanityFetch<SanityDocument[]>(PROJECTS_QUERY, {}, options),
+    sanityFetch<SanityDocument[]>(EXPERIENCE_QUERY, {}, options),
   ]);
+  const experience = experienceEntriesFromSanity(experienceDocs);
 
   return (
     <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-14 sm:px-8 sm:py-20">
@@ -66,7 +69,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <ExperienceSection />
+      <ExperienceSection entries={experience} />
 
       <EducationSection />
 
