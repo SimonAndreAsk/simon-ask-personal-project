@@ -39,12 +39,22 @@ export function ProfileTimeline({ entries, emptyMessage }: ProfileTimelineProps)
           {entry.subtitle ? (
             <p className="mt-1 text-sm text-foreground/90">{entry.subtitle}</p>
           ) : null}
-          {entry.details && entry.details.length > 0 ? (
-            <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted marker:text-muted/60">
-              {entry.details.map((detail) => (
-                <li key={detail}>{detail}</li>
-              ))}
-            </ul>
+          {entry.description ? (
+            <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted">
+              {entry.description}
+            </p>
+          ) : entry.details && entry.details.length > 0 ? (
+            entry.details.length === 1 ? (
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted">
+                {entry.details[0]}
+              </p>
+            ) : (
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted marker:text-muted/60">
+                {entry.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
+            )
           ) : null}
         </li>
       ))}

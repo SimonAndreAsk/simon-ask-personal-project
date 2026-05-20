@@ -11,7 +11,7 @@ export function ExperienceSection() {
         Experience
       </h2>
       <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted">
-        Work and LIA placements — latest first.
+        Work and internships — latest first.
       </p>
       <div className="mt-8">
         <ProfileTimeline entries={experience} emptyMessage="" />

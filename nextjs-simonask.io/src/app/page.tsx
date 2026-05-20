@@ -2,7 +2,6 @@ import { type SanityDocument } from "next-sanity";
 
 import { EducationSection } from "@/components/education-section";
 import { ExperienceSection } from "@/components/experience-section";
-import { GetInTouchSection } from "@/components/get-in-touch-section";
 import { HeroContactActions } from "@/components/hero-contact-actions";
 import { OpenForWorkBadge } from "@/components/open-for-work-badge";
 import { PostList } from "@/components/post-list";
@@ -78,7 +77,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section>
+      <section className="pb-4 sm:pb-6">
         <h2
           id="writing"
           className="page-section-title font-display text-2xl tracking-tight text-foreground"
@@ -93,8 +92,6 @@ export default async function HomePage() {
           <PostList posts={posts} />
         </div>
       </section>
-
-      <GetInTouchSection />
     </main>
   );
 }

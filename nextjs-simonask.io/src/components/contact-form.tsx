@@ -1,10 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import { useState } from "react";
-
-import { SiteIcon } from "@/components/site-icon";
-import { linkedinProfileUrl } from "@/lib/contact";
 
 const fieldClass =
   "w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-foreground shadow-sm transition-[border-color,box-shadow] placeholder:text-muted/80 focus:border-open-green/50 focus:outline-none focus:ring-2 focus:ring-open-green/20";
@@ -52,7 +48,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="mt-8 max-w-lg">
+    <div className="w-full">
       <form onSubmit={handleSubmit} className="space-y-4" noValidate>
         <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden>
           <label htmlFor="contact-company">Company</label>
@@ -106,7 +102,7 @@ export function ContactForm() {
           />
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 pt-1">
+        <div className="flex justify-end pt-1">
           <button
             type="submit"
             disabled={status === "sending"}
@@ -114,15 +110,6 @@ export function ContactForm() {
           >
             {status === "sending" ? "Sending…" : "Send"}
           </button>
-          <a
-            href={linkedinProfileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-foreground"
-          >
-            LinkedIn
-            <SiteIcon icon={ArrowRight} />
-          </a>
         </div>
 
         {status === "success" ? (

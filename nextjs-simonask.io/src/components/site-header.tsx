@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { EmailIconLink } from "@/components/email-icon-link";
@@ -20,8 +21,17 @@ export function SiteHeader() {
       <div className="mx-auto flex w-full max-w-2xl items-center justify-between px-6 py-5 sm:px-8">
         <Link
           href="/"
-          className="font-display text-lg tracking-tight text-foreground transition-opacity hover:opacity-70"
+          className="inline-flex items-center gap-2.5 font-display text-lg tracking-tight text-foreground transition-opacity hover:opacity-70"
         >
+          <Image
+            src="/simon-portrait.png"
+            alt=""
+            width={32}
+            height={32}
+            className="h-8 w-8 shrink-0 rounded-md"
+            sizes="2rem"
+            priority
+          />
           Simon Ask
         </Link>
         <div className="flex items-center gap-6 sm:gap-8">

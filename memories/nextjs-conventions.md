@@ -37,7 +37,7 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 
 | Component | Role |
 |-----------|------|
-| `site-header`, `site-footer` | Chrome |
+| `site-header`, `site-footer` | Chrome; footer includes `/#get-in-touch` form + portrait |
 | `site-icon` | Lucide icons (mail, phone, arrows) + matching stroke brand SVGs (GitHub, LinkedIn); shared size/stroke + `iconLinkClass` |
 | `email-icon-link` | Mailto contact (icon link) |
 | `github-icon-link` | GitHub profile (icon link) |
@@ -47,8 +47,8 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 | `staging-banner` | Shown on staging env |
 | `post-list` | Home writing listing |
 | `project-list` | Home projects listing (Sanity `project`) |
-| `get-in-touch-section` | Home contact block (`/#get-in-touch`) |
-| `contact-form` | Name / email / message form → `POST /api/contact` (Resend) |
+| `contact-aside`, `contact-quick-links` | Footer contact column — portrait, open-for-work, email / phone / LinkedIn |
+| `contact-form` | Name / email / message form in footer → `POST /api/contact` (Resend) |
 | `project-coming-soon-card` | Placeholder row in project list |
 | `experience-section`, `education-section` | Home CV blocks (`/#experience`, `/#education`) |
 | `profile-timeline` | Shared list for profile entries |
