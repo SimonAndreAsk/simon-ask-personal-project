@@ -2,6 +2,18 @@
 
 Personal portfolio site (with writing) and Sanity CMS for [simonask.io](https://simonask.io).
 
+## Understand this repo
+
+| Guide | What you get |
+|-------|----------------|
+| **[docs/repo-map.md](./docs/repo-map.md)** | Plain English → real folders (“public site” = `nextjs-simonask.io/`) |
+| **[docs/cursor-memories-and-skills.md](./docs/cursor-memories-and-skills.md)** | Rules, skills, `memories/`, INDEX routing — how Cursor works here |
+| **[docs/shipping.md](./docs/shipping.md)** | Ship **code** (Git / Go Live) vs **content** (Sanity Publish) |
+| **[docs/README.md](./docs/README.md)** | Index of all guides in `docs/` |
+| **[memories/README.md](./memories/README.md)** | Convention topics (deploy, Next.js, Studio, cards, …) |
+| **[memories/cursor-usage.md](./memories/cursor-usage.md)** | New-chat habits, prompts, token tips |
+| **[AGENTS.md](./AGENTS.md)** | One-screen map for AI agents |
+
 | Site | Branch | URL |
 |------|--------|-----|
 | Production | `main` | [simonask.io](https://simonask.io) |
@@ -18,8 +30,9 @@ Personal portfolio site (with writing) and Sanity CMS for [simonask.io](https://
 | Change layout, styles, or homepage copy | `nextjs-simonask.io/src/app/` and `src/components/` |
 | Change post fields or Studio screens | `studio-simonask.io/schemaTypes/` |
 | Ship code to staging + production | Work on branch `staging`, then say **Go Live** in Cursor (or follow [memories/go-live.md](./memories/go-live.md)) |
-| Use Cursor effectively on this repo | [memories/cursor-usage.md](./memories/cursor-usage.md) |
+| Use Cursor (rules, skills, memories) | [docs/cursor-memories-and-skills.md](./docs/cursor-memories-and-skills.md) |
 | Find a folder by plain English (“public site”, “CMS”) | [docs/repo-map.md](./docs/repo-map.md) |
+| Ship code vs publish posts | [docs/shipping.md](./docs/shipping.md) |
 
 **First time setup:** install [Node.js](https://nodejs.org/) 20+, then run `npm install` inside **each** app folder you need (`nextjs-simonask.io` and/or `studio-simonask.io`). Copy `.env.example` → `.env.local` in that folder before `npm run dev`.
 
@@ -33,7 +46,7 @@ This is a **monorepo** — two apps in one Git repo, plus docs and Cursor config
 | **CMS / Studio** | `studio-simonask.io/` | You + editors | Write and publish posts & projects |
 | **Convention notes** | `memories/` | Cursor + you | Short agent/human docs — [memories/README.md](./memories/README.md) |
 | **Cursor config** | `.cursor/` | Cursor | Rules and skills — [.cursor/README.md](./.cursor/README.md) |
-| **Repo map (aliases)** | `docs/` | You | [docs/repo-map.md](./docs/repo-map.md) — “I mean X → open path Y” |
+| **Human guides** | `docs/` | You | [docs/README.md](./docs/README.md) — repo map, Cursor, shipping |
 | **Scripts** | `scripts/` | Maintainers | [scripts/README.md](./scripts/README.md) |
 | **Agent router** | `AGENTS.md` | Cursor | One-screen map for AI |
 | **Private notes** | `.local/` | You only (gitignored) | Never committed |

@@ -2,7 +2,7 @@
 
 Project notes for **Cursor** and for you when conventions matter. Files are short on purpose — read **one** topic at a time, not the whole folder.
 
-**Folder names on disk:** see [../docs/repo-map.md](../docs/repo-map.md) for plain-language labels (`Public website` → `nextjs-simonask.io/`, etc.).
+**Human guides:** [../docs/README.md](../docs/README.md) (repo map, [Cursor/skills](../docs/cursor-memories-and-skills.md), [shipping](../docs/shipping.md)).
 
 ## Start here
 

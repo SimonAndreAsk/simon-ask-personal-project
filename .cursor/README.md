@@ -24,4 +24,5 @@ You do **not** need to `@` skills for normal work — the agent reads [memories/
 ## Humans
 
 - Repo overview → [../README.md](../README.md)
+- Skills & memories guide → [../docs/cursor-memories-and-skills.md](../docs/cursor-memories-and-skills.md)
 - Prompting tips → [../memories/cursor-usage.md](../memories/cursor-usage.md)

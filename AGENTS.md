@@ -1,6 +1,6 @@
 # simonask.io — agent map
 
-**Humans:** start at [README.md](./README.md) (setup, folder map, common tasks). Plain names → paths: [docs/repo-map.md](./docs/repo-map.md).
+**Humans:** start at [README.md](./README.md) — links to [docs/README.md](./docs/README.md) (repo map, Cursor/skills, shipping).
 
 Monorepo: Next.js site + Sanity Studio. Agent routes context via [memories/INDEX.md](./memories/INDEX.md) (one memory max; user need not @ files). Prompting tips: [memories/cursor-usage.md](./memories/cursor-usage.md).
 

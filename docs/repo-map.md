@@ -11,7 +11,10 @@ Folder names on disk stay as-is (`nextjs-simonask.io`, `studio-simonask.io`) so 
 | **Agent & project conventions** | `memories/` → start at [memories/README.md](../memories/README.md) |
 | **Cursor rules & skills** | `.cursor/` → [.cursor/README.md](../.cursor/README.md) |
 | **Maintenance scripts** | `scripts/` |
+| **Human guides (index)** | `docs/` → [docs/README.md](./README.md) |
 | **This alias map** | `docs/repo-map.md` |
+| **Cursor: skills & memories** | [docs/cursor-memories-and-skills.md](./cursor-memories-and-skills.md) |
+| **Shipping (code vs content)** | [docs/shipping.md](./shipping.md) |
 | **Repo overview & setup** | [README.md](../README.md) |
 | **AI one-screen router** | [AGENTS.md](../AGENTS.md) |
 
