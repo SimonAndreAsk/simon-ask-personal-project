@@ -15,7 +15,7 @@ const linkClass =
 export function ContactQuickLinks() {
   return (
     <nav
-      className="flex w-full flex-col items-center gap-2.5 border-t border-border/40 pt-4 sm:items-stretch"
+      className="hidden w-full flex-col gap-2.5 border-t border-border/40 pt-4 sm:flex sm:items-stretch"
       aria-label="Other ways to reach me"
     >
       <a href={contactMailto} className={linkClass}>

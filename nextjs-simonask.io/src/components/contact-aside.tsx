@@ -4,7 +4,7 @@ import { ContactQuickLinks } from "@/components/contact-quick-links";
 
 export function ContactAside() {
   return (
-    <aside className="flex w-full max-w-xs flex-col items-center gap-4 sm:w-48 sm:max-w-none sm:shrink-0 sm:items-stretch">
+    <aside className="flex w-full max-w-xs flex-col items-center sm:w-48 sm:max-w-none sm:shrink-0 sm:items-stretch sm:gap-4">
       <figure className="overflow-hidden rounded-lg">
         <Image
           src="/simon-portrait.png"
