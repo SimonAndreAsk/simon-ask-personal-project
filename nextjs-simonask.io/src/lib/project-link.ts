@@ -1,3 +1,12 @@
+export function isGithubProjectUrl(url: string): boolean {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, "");
+    return host === "github.com" || host.endsWith(".github.io");
+  } catch {
+    return false;
+  }
+}
+
 /** Homepage label for a project URL (repo, live site, or write-up). */
 export function projectLinkLabel(url: string): string {
   try {

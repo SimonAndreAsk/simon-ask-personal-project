@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { type SanityDocument } from "next-sanity";
 
-import { SiteIcon } from "@/components/site-icon";
-import { projectLinkLabel } from "@/lib/project-link";
+import { GithubIcon, SiteIcon } from "@/components/site-icon";
+import { isGithubProjectUrl, projectLinkLabel } from "@/lib/project-link";
 import { urlFor } from "@/sanity/image";
 
 function isDraftProject(project: SanityDocument) {
@@ -58,6 +58,7 @@ export function ProjectList({ projects }: { projects: SanityDocument[] }) {
         const href = typeof project.url === "string" ? project.url : "";
         const { src: thumbUrl, alt: thumbAlt } = projectThumbnail(project);
         const linkLabel = href ? projectLinkLabel(href) : "View project";
+        const showGithubIcon = href ? isGithubProjectUrl(href) : false;
         const title =
           typeof project.title === "string" ? project.title : "Project";
 
@@ -104,6 +105,9 @@ export function ProjectList({ projects }: { projects: SanityDocument[] }) {
                       className="inline-flex shrink-0 items-center gap-1 pt-0.5 text-sm font-medium text-muted opacity-0 transition-[opacity,color,transform] duration-200 group-hover:opacity-100 group-hover:text-open-green group-focus-visible:opacity-100 [@media(hover:none)]:opacity-100"
                       aria-hidden
                     >
+                      {showGithubIcon ? (
+                        <GithubIcon className="size-4 shrink-0" />
+                      ) : null}
                       <span>{linkLabel}</span>
                       <SiteIcon
                         icon={ArrowRight}
