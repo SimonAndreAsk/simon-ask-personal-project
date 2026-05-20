@@ -9,6 +9,9 @@
   --open-green: #166534;
   --border: #e3e1db;
   --surface: #eae9e3;
+  /* Sticky header; gap below header when scrolling to a section (see scroll-to-section.ts) */
+  --site-header-height: 4.25rem;
+  --scroll-section-gap: 2rem;
 }
 
 @theme inline {
@@ -29,15 +32,8 @@ html {
   color-scheme: light;
 }
 
-html.dark {
-  color-scheme: dark;
-  --background: #020302;
-  --foreground: #f5f5f5;
-  --muted: #b0b0b0;
-  --accent: #2dd4bf;
-  --accent-hover: #5eead4;
-  --border: #1a1f1c;
-  --surface: #0a0c0b;
+.page-section-title {
+  scroll-margin-top: calc(var(--site-header-height) + var(--scroll-section-gap));
 }
 
 body {
@@ -64,6 +60,40 @@ body {
 
 .open-for-work-dot {
   animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Home intro links: straight bar, slightly rounded caps (not rounded link box) */
+.intro-inline-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 0.15em;
+  transition: color 0.15s ease;
+}
+
+.intro-inline-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: currentColor;
+  transition: background-color 0.15s ease;
+}
+
+.intro-inline-link:hover {
+  color: var(--open-green);
+}
+
+.intro-inline-link:hover::after {
+  background-color: var(--open-green);
+}
+
+.intro-inline-link:focus-visible {
+  outline: 2px solid var(--open-green);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* Article typography — long-form reading (~65ch within max-w-2xl page) */

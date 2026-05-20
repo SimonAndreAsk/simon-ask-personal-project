@@ -45,8 +45,18 @@ Read when: unsure why the repo is structured a certain way. Add a short entry wh
 
 ### CSS variables + Tailwind `@theme inline`
 
-**Context:** Light/dark theme with shared tokens for marketing and article typography.
+**Context:** Shared design tokens for marketing and article typography.
 
-**Decision:** Define tokens in `globals.css`; map to Tailwind in `@theme inline`; toggle dark via `html.dark`.
+**Decision:** Define tokens in `globals.css`; map to Tailwind in `@theme inline`. An earlier `html.dark` toggle was removed in favor of a single light palette (see next ADR).
 
 **Implications:** Prefer semantic color utilities over hardcoded hex in components.
+
+---
+
+### Light-only public site (no dark mode)
+
+**Context:** Site direction is a simple portfolio; maintaining ThemeProvider, blocking script, and toggle added cost without clear need.
+
+**Decision:** Ship one light palette in `:root` only; remove `html.dark`, `ThemeProvider` / `ThemeScript` / `ThemeToggle`, and `localStorage.theme`.
+
+**Implications:** If dark mode returns, reintroduce a dark token block + class on `html` and restore the previous pattern.

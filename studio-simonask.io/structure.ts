@@ -29,4 +29,13 @@ export const structure: StructureResolver = (S) =>
             .filter('_type == "post"')
             .defaultOrdering([{field: 'publishedAt', direction: 'desc'}]),
         ),
+      S.divider(),
+      S.listItem()
+        .title('Projects')
+        .child(
+          S.documentList()
+            .title('Projects')
+            .filter('_type == "project"')
+            .defaultOrdering([{field: 'publishedAt', direction: 'desc'}]),
+        ),
     ])

@@ -1,6 +1,6 @@
 # simonask.io
 
-Personal blog and Sanity CMS for [simonask.io](https://simonask.io).
+Personal portfolio site (with writing) and Sanity CMS for [simonask.io](https://simonask.io).
 
 | Site | Branch | URL |
 |------|--------|-----|
@@ -23,7 +23,7 @@ Personal blog and Sanity CMS for [simonask.io](https://simonask.io).
 1. Work on `staging` → deploys to **stage.simonask.io**
 2. Merge `staging` → `main` → deploys to **simonask.io**
 
-**Articles** follow Sanity:
+**Writing** (posts) follow Sanity:
 
 1. Write in Studio → **Save** (draft)
 2. Preview on staging (and in Studio **Presentation**)

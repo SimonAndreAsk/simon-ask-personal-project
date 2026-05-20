@@ -1,3 +1,6 @@
+# Local-only (not shared): content voice, drafts, private skills
+.local/
+
 # Dependencies
 node_modules/
 

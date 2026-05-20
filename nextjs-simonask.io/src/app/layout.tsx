@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import { ScrollToHash } from "@/components/scroll-to-hash";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { StagingBanner } from "@/components/staging-banner";
-import { StickyContact } from "@/components/sticky-contact";
-import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeScript } from "@/components/theme-script";
 
 import "./globals.css";
 
@@ -33,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s · Simon Ask",
   },
   description:
-    "I write about what I'm building and learning in digital analytics and on the web—specific notes from my work, for people on a similar path.",
+    "Personal portfolio — digital analytics and the web. Writing that shows how I work.",
 };
 
 export default function RootLayout({
@@ -44,20 +42,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <head>
-        <ThemeScript />
-      </head>
       <body className="flex min-h-full flex-col">
-        <ThemeProvider>
-          <StagingBanner />
-          <SiteHeader />
-          {children}
-          <SiteFooter />
-          <StickyContact />
-        </ThemeProvider>
+        <ScrollToHash />
+        <StagingBanner />
+        <SiteHeader />
+        {children}
+        <SiteFooter />
         <SpeedInsights />
       </body>
     </html>

@@ -1,6 +1,6 @@
 # simonask.io — Website
 
-Next.js blog for [simonask.io](https://simonask.io). Content is loaded from Sanity — configure project ID and dataset via environment variables (see below).
+Next.js site for [simonask.io](https://simonask.io). Content is loaded from Sanity — configure project ID and dataset via environment variables (see below).
 
 | Environment | URL | Git branch |
 |-------------|-----|------------|
@@ -28,6 +28,8 @@ For **draft preview** locally, also set:
 - `NEXT_PUBLIC_SITE_ENV=staging` — show drafts and staging banner
 - `SANITY_REVALIDATE_SECRET` — any random string (matches Sanity webhook)
 - `NEXT_PUBLIC_SANITY_STUDIO_URL` — `http://localhost:3333` (or deployed studio URL)
+
+For the **contact form**, also set `RESEND_API_KEY` (see `.env.example`). Without it, the form returns “not configured yet.”
 
 **Never commit** `.env.local`.
 
@@ -62,6 +64,8 @@ For **draft preview** locally, also set:
 | `NEXT_PUBLIC_SITE_ENV` | — | `staging` |
 | `SANITY_REVALIDATE_SECRET` | ✓ | ✓ |
 | `NEXT_PUBLIC_SANITY_STUDIO_URL` | optional | optional |
+| `RESEND_API_KEY` | ✓ | ✓ |
+| `CONTACT_FROM_EMAIL` | optional (`hello@simonask.io`) | optional |
 
 Redeploy after changing env vars.
 
@@ -78,6 +82,7 @@ Redeploy after changing env vars.
 | `/api/draft-mode/enable` | Presentation tool / draft preview |
 | `/api/draft-mode/disable` | Exit draft preview |
 | `/api/revalidate` | Sanity webhook — refresh cached pages |
+| `/api/contact` | Contact form — sends mail via Resend to `hello@simonask.io` |
 
 ## Project layout
 
@@ -88,7 +93,8 @@ src/
     [slug]/page.tsx       # Article pages
     api/draft-mode/       # Draft preview
     api/revalidate/       # Webhook handler
-  components/             # Header, footer, post list, theme, etc.
+    api/contact/          # Contact form (Resend)
+  components/             # Header, footer, post list, hero CTAs, etc.
   lib/                    # Contact email, date formatting
   sanity/
     client.ts             # Sanity client
@@ -99,4 +105,6 @@ src/
 
 ## Contact
 
-Public email: `hello@simonask.io` — defined in `src/lib/contact.ts`.
+Public email and phone: `src/lib/contact.ts`.
+
+Contact form on the home page uses [Resend](https://resend.com). Set `RESEND_API_KEY` and verify your domain; see `.env.example` (`CONTACT_FROM_EMAIL` defaults to `hello@simonask.io`).

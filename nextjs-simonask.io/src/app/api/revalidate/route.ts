@@ -23,6 +23,8 @@ export async function POST(request: NextRequest) {
     if (slug) {
       revalidatePath(`/${slug}`);
     }
+  } else if (body?._type === "project") {
+    revalidatePath("/");
   } else {
     revalidatePath("/", "layout");
   }

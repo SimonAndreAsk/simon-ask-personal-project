@@ -1,15 +1,16 @@
-import Link from "next/link";
 import { type SanityDocument } from "next-sanity";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 import { ArticleBody } from "@/components/article-body";
+import { SectionLink } from "@/components/section-link";
 import { formatDate } from "@/lib/format";
 import { client } from "@/sanity/client";
 import { isStagingSite } from "@/sanity/env";
 import { urlFor } from "@/sanity/image";
 import { sanityFetch } from "@/sanity/load";
 import { POST_QUERY, SLUGS_QUERY } from "@/sanity/queries";
+import { SITE_SECTIONS, sectionHref } from "@/lib/sections";
 
 const options = { next: { revalidate: 30 } };
 
@@ -55,12 +56,12 @@ export default async function PostPage({ params }: PageProps) {
 
   return (
     <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-12 sm:px-8 sm:py-16">
-      <Link
-        href="/#articles"
+      <SectionLink
+        href={sectionHref(SITE_SECTIONS.writing)}
         className="mb-10 inline-flex text-sm text-muted transition-colors hover:text-foreground"
       >
-        ← All articles
-      </Link>
+        ← Writing
+      </SectionLink>
 
       {isDraft && isStagingSite && (
         <p

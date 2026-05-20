@@ -20,5 +20,22 @@ export const resolve: PresentationPluginOptions['resolve'] = {
         ],
       }),
     }),
+    project: defineLocations({
+      select: {
+        title: 'title',
+      },
+      resolve: (doc) => ({
+        locations: [
+          {
+            title: doc?.title || 'Project',
+            href: '/#projects',
+          },
+          {
+            title: 'Home',
+            href: '/',
+          },
+        ],
+      }),
+    }),
   },
 }
