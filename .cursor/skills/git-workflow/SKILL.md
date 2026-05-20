@@ -2,12 +2,16 @@
 name: git-workflow
 description: >-
   Git commit and GitHub PR workflow for simonask.io. Use when the user asks to
-  commit, amend, push, or create a pull request.
+  commit, amend, push, create a pull request, or says Go Live.
 ---
 
 # Git workflow (simonask.io)
 
-Apply only when the user explicitly asks for a commit or PR.
+Apply when the user explicitly asks for a commit, PR, or **Go Live**.
+
+## Go Live
+
+When the user says **Go Live** (any casing), follow `memories/go-live.md`: commit on `staging`, push, merge `staging` → `main`, push `main`, return to `staging`. Always push unless the tree is already clean (then report that).
 
 ## Commits
 

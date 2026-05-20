@@ -16,6 +16,7 @@ Project-specific context for agents. **Do not read every file** — pick **at mo
 | [doc-sync.md](./doc-sync.md) | renamed/moved paths, new routes, update agent docs, structural refactor |
 | [refine-prompt.md](./refine-prompt.md) | refine prompt, improve my prompt, 5-part framework |
 | [cursor-usage.md](./cursor-usage.md) | token usage, how to prompt, new chat workflow |
+| [go-live.md](./go-live.md) | **Go Live**, go live, ship to staging and main, deploy site |
 
 ## Skills (`.cursor/skills/`)
 
@@ -23,7 +24,7 @@ Loaded by intent — user does not `@` unless they want to force one.
 
 | Skill | Prompt signals |
 |-------|----------------|
-| `git-workflow` | commit, push, amend, PR, pull request, `gh`, branch |
+| `git-workflow` | commit, push, amend, PR, pull request, `gh`, branch, **Go Live** |
 | `sanity-studio-develop` | new Studio type/field/structure (overlaps sanity-studio-development memory — prefer skill for implementation steps) |
 | `refine-prompt` | refine / structure a prompt (overlaps refine-prompt memory) |
 

@@ -11,6 +11,7 @@ Start a **new chat** for each discrete job:
 | One bug or UI tweak | `Change globals.css --accent to #…` |
 | One feature slice | `Add optional subtitle field to post schema in studio-simonask.io` |
 | Git / PR | `Commit staged changes with message …` / `Open PR to main` |
+| Ship to prod | **`Go Live`** — commit, push `staging`, merge to `main` (see `go-live.md`) |
 | Doc/structure change | `Renamed src/app/blog to posts — update agent docs` |
 
 **Stay in the same chat** only while iterating on the *same* file/PR.
