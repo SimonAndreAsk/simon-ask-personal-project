@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-import { contactEmail } from "@/lib/contact";
+import { contactEmail, contactFromEmail } from "@/lib/contact";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_NAME = 120;
@@ -14,9 +14,12 @@ type ContactBody = {
 };
 
 export async function POST(request: NextRequest) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const fromEmail =
-    process.env.CONTACT_FROM_EMAIL?.trim() || contactEmail;
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const fromAddress =
+    process.env.CONTACT_FROM_EMAIL?.trim() || contactFromEmail;
+  const from = fromAddress.includes("<")
+    ? fromAddress
+    : `Simon Ask <${fromAddress}>`;
 
   if (!apiKey) {
     return NextResponse.json(
@@ -71,7 +74,7 @@ export async function POST(request: NextRequest) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: fromEmail,
+      from,
       to: [contactEmail],
       reply_to: email,
       subject,

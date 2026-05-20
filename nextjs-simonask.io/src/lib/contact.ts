@@ -1,4 +1,7 @@
 export const contactEmail = "hello@simonask.io";
+
+/** Resend sender — must match a verified domain in Resend (mail.simonask.io). */
+export const contactFromEmail = "hello@mail.simonask.io";
 export const contactMailto = `mailto:${contactEmail}`;
 
 export const contactPhone = "076-036 20 30";

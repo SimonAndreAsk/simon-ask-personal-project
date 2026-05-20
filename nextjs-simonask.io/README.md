@@ -67,7 +67,7 @@ For the **contact form**, also set `RESEND_API_KEY` (see `.env.example`). Withou
 | `SANITY_REVALIDATE_SECRET` | ✓ | ✓ |
 | `NEXT_PUBLIC_SANITY_STUDIO_URL` | optional | optional |
 | `RESEND_API_KEY` | ✓ | ✓ |
-| `CONTACT_FROM_EMAIL` | optional (`hello@simonask.io`) | optional |
+| `CONTACT_FROM_EMAIL` | optional (`hello@mail.simonask.io`) | optional |
 
 Redeploy after changing env vars.
 
@@ -118,4 +118,4 @@ src/
 
 Public email and phone: `src/lib/contact.ts`.
 
-Contact form on the home page uses [Resend](https://resend.com). Set `RESEND_API_KEY` and verify your domain; see `.env.example` (`CONTACT_FROM_EMAIL` defaults to `hello@simonask.io`).
+Contact form on the home page uses [Resend](https://resend.com). Set `RESEND_API_KEY` and verify your sending domain (`mail.simonask.io`); see `.env.example` (`CONTACT_FROM_EMAIL` defaults to `hello@mail.simonask.io`).
