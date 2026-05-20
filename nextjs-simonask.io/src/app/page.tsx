@@ -45,16 +45,16 @@ export default async function HomePage() {
                 projects
               </SectionLink>
               {", "}
+              <SectionLink href={sectionHref(SITE_SECTIONS.writing)} className={introLinkClass}>
+                writing
+              </SectionLink>
+              {", "}
               <SectionLink href={sectionHref(SITE_SECTIONS.experience)} className={introLinkClass}>
                 experience
               </SectionLink>
               {", "}
               <SectionLink href={sectionHref(SITE_SECTIONS.education)} className={introLinkClass}>
                 education
-              </SectionLink>
-              {", "}
-              <SectionLink href={sectionHref(SITE_SECTIONS.writing)} className={introLinkClass}>
-                writing
               </SectionLink>
               {" or "}
               <SectionLink href={sectionHref(SITE_SECTIONS.getInTouch)} className={introLinkClass}>
@@ -68,10 +68,6 @@ export default async function HomePage() {
           <HeroContactActions className="mt-12 sm:mt-10" />
         </div>
       </section>
-
-      <ExperienceSection entries={experience} />
-
-      <EducationSection />
 
       <section className="mb-20 sm:mb-24">
         <h2
@@ -89,7 +85,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="pb-4 sm:pb-6">
+      <section className="mb-20 sm:mb-24">
         <h2
           id="writing"
           className="page-section-title font-display text-2xl tracking-tight text-foreground"
@@ -103,6 +99,10 @@ export default async function HomePage() {
           <PostList posts={posts} />
         </div>
       </section>
+
+      <ExperienceSection entries={experience} />
+
+      <EducationSection />
     </main>
   );
 }

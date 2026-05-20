@@ -14,10 +14,10 @@ import { SITE_SECTIONS, sectionHref } from "@/lib/sections";
 const navLinkClass = "transition-colors hover:text-foreground";
 
 const navItems = [
-  { id: SITE_SECTIONS.experience, label: "Experience" },
-  { id: SITE_SECTIONS.education, label: "Education" },
   { id: SITE_SECTIONS.projects, label: "Projects" },
   { id: SITE_SECTIONS.writing, label: "Writing" },
+  { id: SITE_SECTIONS.experience, label: "Experience" },
+  { id: SITE_SECTIONS.education, label: "Education" },
 ] as const;
 
 export function SiteHeader() {

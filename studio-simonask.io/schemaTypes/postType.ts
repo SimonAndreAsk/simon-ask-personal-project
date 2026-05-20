@@ -23,6 +23,15 @@ export const postType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      group: 'article',
+      of: [{type: 'reference', to: [{type: 'postCategory'}]}],
+      description:
+        'Topics for this article. Create categories under Post categories in the sidebar, then pick them here.',
+    }),
+    defineField({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',

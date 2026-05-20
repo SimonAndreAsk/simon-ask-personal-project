@@ -3,7 +3,7 @@ import { education } from "@/lib/profile";
 
 export function EducationSection() {
   return (
-    <section className="mb-20 sm:mb-24">
+    <section className="pb-4 sm:pb-6">
       <h2
         id="education"
         className="page-section-title font-display text-2xl tracking-tight text-foreground"

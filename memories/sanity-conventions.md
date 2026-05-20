@@ -14,7 +14,11 @@ Read when: schema, Studio config, GROQ, Presentation preview, or publish/revalid
 
 ## Post document (`post`)
 
-Fields: `title`, `slug`, optional `excerpt` (homepage preview; falls back to first paragraph of `body`), `body` (`blockContent`), `image` (cover — list/social only), `publishedAt`. Studio groups: **Article** / **Publishing**.
+Fields: `title`, `slug`, optional `categories` (references to `postCategory`), optional `excerpt` (homepage preview; falls back to first paragraph of `body`), `body` (`blockContent`), `image` (cover — list/social only), `publishedAt`. Studio groups: **Article** / **Publishing**.
+
+## Post category document (`postCategory`)
+
+Fields: `label`, `backgroundColor` (color picker). Reusable across posts. Studio sidebar: **Post categories**. Homepage: colored pills at top of writing cards (same UI as project tags).
 
 **Article body** — structured blocks (not shortcodes): use **⋯** insert menu or `@selvklart/sanity-block-selector` picker on the field. Types: text (normal, H2, H3, quote), **Image** (`figure`), **Callout**, **Code** (`codeBlock`). Do not type `/callout` in prose. Schema: `blockContentType.ts`, `blockContentInput.ts`, `blocks/`. Site: `article-body.tsx`.
 

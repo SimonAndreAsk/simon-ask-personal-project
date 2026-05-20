@@ -47,6 +47,14 @@ export const structure: StructureResolver = (S) =>
             .defaultOrdering([{field: 'label', direction: 'asc'}]),
         ),
       S.listItem()
+        .title('Post categories')
+        .child(
+          S.documentList()
+            .title('Post categories')
+            .filter('_type == "postCategory"')
+            .defaultOrdering([{field: 'label', direction: 'asc'}]),
+        ),
+      S.listItem()
         .title('Experience')
         .child(
           S.documentList()

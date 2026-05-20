@@ -91,7 +91,7 @@ Redeploy after changing env vars.
 ```
 src/
   app/
-    page.tsx              # Home (experience, education, projects, writing)
+    page.tsx              # Home (projects, writing, experience, education)
     [slug]/page.tsx       # Article pages
     layout.tsx            # Shell: header, footer, fonts, staging banner
     globals.css           # Design tokens + article typography

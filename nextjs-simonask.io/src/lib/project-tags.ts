@@ -47,7 +47,8 @@ export function contrastingTagTextColor(backgroundHex: string): string {
   return luminance > 0.45 ? "#1c1917" : "#f4f3ef";
 }
 
-export function projectTagsFromSanity(tags: unknown): ProjectTag[] {
+/** Shared parser for `projectTag` and `postCategory` references. */
+export function coloredTagsFromSanity(tags: unknown): ProjectTag[] {
   if (!Array.isArray(tags)) return [];
 
   return tags
@@ -64,4 +65,12 @@ export function projectTagsFromSanity(tags: unknown): ProjectTag[] {
       return { _id: id, label, backgroundColor };
     })
     .filter((tag): tag is ProjectTag => tag !== null);
+}
+
+export function projectTagsFromSanity(tags: unknown): ProjectTag[] {
+  return coloredTagsFromSanity(tags);
+}
+
+export function postCategoriesFromSanity(categories: unknown): ProjectTag[] {
+  return coloredTagsFromSanity(categories);
 }

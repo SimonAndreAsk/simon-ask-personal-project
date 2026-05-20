@@ -3,11 +3,17 @@ import {
   type ProjectTag,
 } from "@/lib/project-tags";
 
-export function ProjectTags({ tags }: { tags: ProjectTag[] }) {
+type ProjectTagsProps = {
+  tags: ProjectTag[];
+  /** Accessible name for the tag list, e.g. "Tools used" or "Categories". */
+  listLabel?: string;
+};
+
+export function ProjectTags({ tags, listLabel = "Tools used" }: ProjectTagsProps) {
   if (tags.length === 0) return null;
 
   return (
-    <ul className="flex flex-wrap gap-1.5" aria-label="Tools used">
+    <ul className="flex flex-wrap gap-1.5" aria-label={listLabel}>
       {tags.map((tag) => (
         <li key={tag._id}>
           <span

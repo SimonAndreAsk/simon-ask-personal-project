@@ -7,7 +7,12 @@ export const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(
   publishedAt,
   image,
   excerpt,
-  "excerptText": coalesce(excerpt, pt::text(body))
+  "excerptText": coalesce(excerpt, pt::text(body)),
+  "categories": categories[]-> {
+    _id,
+    label,
+    backgroundColor
+  }
 }`
 
 export const SLUGS_QUERY = `*[_type == "post" && defined(slug.current)].slug.current`
