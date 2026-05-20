@@ -51,8 +51,7 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 | `contact-aside`, `contact-quick-links` | Footer contact column — portrait, open-for-work, email / phone / LinkedIn |
 | `contact-form` | Name / email / message form in footer → `POST /api/contact` (Resend) |
 | `experience-section`, `education-section` | Home CV blocks (`/#experience`, `/#education`); experience from Sanity |
-| `profile-timeline` | Shared list for profile entries |
-| `company-logo` | Round 48px employer logo beside experience titles (Sanity `logoImage` or fallback from `logoAlt`) |
+| `profile-timeline` | Experience and education cards — same inner layout as before (title + period row), no logos |
 | `article-body` | Portable text rendering |
 | `hero-intro-meta`, `location-label`, `open-for-work-label` | Hero location + hiring status |
 

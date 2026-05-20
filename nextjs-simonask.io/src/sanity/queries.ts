@@ -37,8 +37,6 @@ export const EXPERIENCE_QUERY = `*[_type == "experience" && defined(title)] | or
   subtitle,
   period,
   href,
-  logoAlt,
-  logoImage,
   details,
   publishedAt
 }`

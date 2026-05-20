@@ -6,8 +6,6 @@ export type ProfileEntry = {
   subtitle?: string;
   period?: string;
   href?: string;
-  /** Round logo beside the title (experience). `src` under `public/logos/`. */
-  logo?: { src?: string; alt: string };
   /** Prose body (e.g. education summary). */
   description?: string;
   details?: string[];
@@ -20,7 +18,6 @@ export const ihmDigitalAnalyticsProgramUrl =
 export const education: ProfileEntry[] = [
   {
     title: "IHM Business School",
-    logo: { alt: "IHM Business School" },
     subtitle: "Digital Analytics Specialist",
     period: "2024–2026",
     href: ihmDigitalAnalyticsProgramUrl,

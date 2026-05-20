@@ -17,7 +17,6 @@ export function ExperienceSection({ entries }: { entries: ProfileEntry[] }) {
         <ProfileTimeline
           entries={entries}
           emptyMessage="No experience entries yet."
-          showProgressLine
         />
       </div>
     </section>
