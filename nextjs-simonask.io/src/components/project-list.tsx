@@ -66,7 +66,7 @@ export function ProjectList({ projects }: { projects: SanityDocument[] }) {
   }
 
   return (
-    <ul className="flex flex-col gap-4 border-t border-border/40">
+    <ul className="flex flex-col gap-4">
       {projects.map((project) => {
         const draft = isDraftProject(project);
         const href = typeof project.url === "string" ? project.url : "";

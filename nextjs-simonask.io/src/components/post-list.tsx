@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { type SanityDocument } from "next-sanity";
 
 import { ProjectTags } from "@/components/project-tags";
@@ -51,6 +51,7 @@ function PostDestination({ className = "", arrowClassName = "" }: PostDestinatio
         .filter(Boolean)
         .join(" ")}
     >
+      <SiteIcon icon={FileText} className="size-4 shrink-0" />
       <span>{READ_LABEL}</span>
       <SiteIcon
         icon={ArrowRight}
@@ -72,7 +73,7 @@ export function PostList({ posts }: { posts: SanityDocument[] }) {
   }
 
   return (
-    <ul className="flex flex-col gap-4 border-t border-border/40 sm:grid sm:grid-cols-2 sm:gap-4">
+    <ul className="flex flex-col gap-4 sm:grid sm:grid-cols-2 sm:gap-4">
       {posts.map((post) => {
         const draft = isDraftPost(post);
         const slug =
@@ -145,6 +146,7 @@ export function PostList({ posts }: { posts: SanityDocument[] }) {
                   )}
 
                   <PostDestination
+                    className="mt-0 min-h-11 items-center"
                     arrowClassName="group-hover:translate-x-0.5"
                   />
                 </div>
