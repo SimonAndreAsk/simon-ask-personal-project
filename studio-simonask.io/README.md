@@ -1,5 +1,7 @@
 # simonask.io — Sanity Studio
 
+← [Repo root README](../README.md)
+
 Content studio for the simonask.io blog.
 
 Project ID and dataset are set in `.env.local` (see `.env.example`). Use the same project ID as the Next.js app.

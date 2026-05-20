@@ -51,5 +51,18 @@ Stop hook is off (`.cursor/hooks.json`) to save tokens.
 
 ## 5. Cursor settings (you)
 
-- Short User Rules → `memories/cursor-user-rules-suggested.md`
+Prefer **short User Rules** in Cursor Settings → Rules. Move git/PR detail to the project skill (`@.cursor/skills/git-workflow`) — already in the repo.
+
+Example minimal User Rules:
+
+```markdown
+- Run commands and investigate; don't give up after one failure.
+- Minimize diff scope; match existing code style; no drive-by refactors.
+- Code citations: ```startLine:endLine:path``` on its own line; no HTML entities in fences.
+- Commits/PRs: only when I ask; agent uses git-workflow skill when asked.
+- simonask.io: agent routes via memories/INDEX.md (one memory max); I don't @ files unless overriding.
+```
+
+You can delete from global User Rules anything duplicated in `memories/doc-sync.md`, `workspace.mdc`, or `.cursor/skills/git-workflow/`.
+
 - Turn off *Include third-party Plugins, Skills, and other configs* if unused

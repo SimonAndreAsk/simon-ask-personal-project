@@ -19,8 +19,9 @@ Read when: you change project structure, or agent docs feel outdated.
 | `nextjs-simonask.io/src/app/globals.css` | `memories/nextjs-conventions.md`, `.cursor/rules/nextjs.mdc` |
 | `nextjs-simonask.io/src/app/api/revalidate/route.ts` | `memories/sanity-conventions.md`, `memories/architecture.md` |
 | Deploy / branch / env workflow | `architecture.md`, root `README.md`, app READMEs |
-| New memory or skill | New file in `memories/`, row in `memories/INDEX.md`, root `AGENTS.md` if scope is repo-wide |
-| New rule in .cursor/rules/ | `memories/INDEX.md` or `memories/doc-sync.md` |
+| New memory or skill | New file in `memories/`, row in `memories/INDEX.md`, `memories/README.md`, root `AGENTS.md` if scope is repo-wide |
+| New rule in .cursor/rules/ | `memories/INDEX.md` or `memories/doc-sync.md`, `.cursor/README.md` if layout changes |
+| Repo folder map / beginner navigation | Root `README.md`, `memories/README.md`, `.cursor/README.md`, `scripts/README.md` |
 
 ## What to update in each doc
 

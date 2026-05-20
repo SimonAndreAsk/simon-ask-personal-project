@@ -9,12 +9,34 @@ Personal portfolio site (with writing) and Sanity CMS for [simonask.io](https://
 
 **GitHub:** [SimonAndreAsk/simon-ask-personal-project](https://github.com/SimonAndreAsk/simon-ask-personal-project)
 
-## Repository structure
+## Start here
 
-| Folder | Purpose |
-|--------|---------|
-| `nextjs-simonask.io/` | Public website (Next.js 16) |
-| `studio-simonask.io/` | Sanity Studio (content editing) |
+| I want to… | Open this |
+|------------|-----------|
+| Run the **website** on my machine | [nextjs-simonask.io/README.md](./nextjs-simonask.io/README.md) → `npm run dev` → http://localhost:3000 |
+| Run **Sanity Studio** (edit posts/projects) | [studio-simonask.io/README.md](./studio-simonask.io/README.md) → `npm run dev` → http://localhost:3333 |
+| Change layout, styles, or homepage copy | `nextjs-simonask.io/src/app/` and `src/components/` |
+| Change post fields or Studio screens | `studio-simonask.io/schemaTypes/` |
+| Ship code to staging + production | Work on branch `staging`, then say **Go Live** in Cursor (or follow [memories/go-live.md](./memories/go-live.md)) |
+| Use Cursor effectively on this repo | [memories/cursor-usage.md](./memories/cursor-usage.md) |
+
+**First time setup:** install [Node.js](https://nodejs.org/) 20+, then run `npm install` inside **each** app folder you need (`nextjs-simonask.io` and/or `studio-simonask.io`). Copy `.env.example` → `.env.local` in that folder before `npm run dev`.
+
+## What's in this repo
+
+This is a **monorepo** — two apps in one Git repo, plus docs and Cursor config.
+
+| Folder / file | For | Purpose |
+|---------------|-----|---------|
+| **`nextjs-simonask.io/`** | Everyone | Public Next.js site (what visitors see) |
+| **`studio-simonask.io/`** | You + editors | Sanity Studio — create and publish posts/projects |
+| **`memories/`** | Cursor + you | Short convention docs for agents; humans start at [memories/README.md](./memories/README.md) |
+| **`.cursor/`** | Cursor | Project rules and skills — see [.cursor/README.md](./.cursor/README.md) |
+| **`scripts/`** | Maintainers | Repo scripts (e.g. doc validation) — [scripts/README.md](./scripts/README.md) |
+| **`AGENTS.md`** | Cursor | One-screen map for AI agents |
+| **`.local/`** | You only (gitignored) | Optional private notes; never committed |
+
+There is **no** `package.json` at the repo root — always `cd` into the app folder before `npm install` or `npm run dev`.
 
 ## How code and content ship
 
@@ -63,8 +85,8 @@ Open [http://localhost:3333](http://localhost:3333). Project settings (including
 ## Environment variables and secrets
 
 - **Do not commit** `.env`, `.env.local`, API tokens, or private keys.
-- Sanity **project ID** and **dataset** live in `.env.local` (see `.env.example` in each app). They are not secret, but are kept out of the repo.
-- **Viewer token** and **revalidate secret** are required for draft preview and fast publish — see `.env.example` in each app folder and `nextjs-simonask.io/README.md`.
+- Each app has its own **`.env.example`** — copy to `.env.local` in that folder only.
+- **Viewer token** and **revalidate secret** are required for draft preview and fast publish — see app READMEs.
 
 ## Deployment
 
@@ -79,9 +101,10 @@ Studio: run locally, or `npm run deploy` in `studio-simonask.io` for `*.sanity.s
 
 | Location | Command | Description |
 |----------|---------|-------------|
-| `nextjs-simonask.io` | `npm run dev` | Dev server |
+| `nextjs-simonask.io` | `npm run dev` | Dev server (:3000) |
 | `nextjs-simonask.io` | `npm run build` | Production build |
-| `studio-simonask.io` | `npm run dev` | Studio dev server |
+| `studio-simonask.io` | `npm run dev` | Studio dev server (:3333) |
 | `studio-simonask.io` | `npm run deploy` | Deploy studio to `*.sanity.studio` |
+| repo root | `node scripts/validate-agent-docs.mjs` | Check agent doc paths (after doc edits) |
 
-Details: README in each subfolder.
+More detail: README in each app folder.

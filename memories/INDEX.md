@@ -30,6 +30,7 @@ Loaded by intent — user does not `@` unless they want to force one.
 
 ## Not duplicated here
 
+- Human navigation → `memories/README.md`, root `README.md`, `.cursor/README.md`
 - Setup commands and env tables → root `README.md`, `nextjs-simonask.io/README.md`, `studio-simonask.io/README.md`
 - Next.js 16 breaking changes → `.cursor/rules/nextjs.mdc` (auto when editing `nextjs-simonask.io/`)
 - Sanity Studio editing → `.cursor/rules/sanity-studio.mdc` (auto when editing `studio-simonask.io/`)

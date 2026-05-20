@@ -1,5 +1,7 @@
 # simonask.io — Website
 
+← [Repo root README](../README.md)
+
 Next.js site for [simonask.io](https://simonask.io). Content is loaded from Sanity — configure project ID and dataset via environment variables (see below).
 
 | Environment | URL | Git branch |
