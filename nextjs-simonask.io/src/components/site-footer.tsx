@@ -28,7 +28,10 @@ export function SiteFooter() {
           <div className="flex items-start gap-5 sm:gap-8">
             <ContactAside />
             <div className="min-w-0 flex-1">
-              <div className="flex flex-wrap items-center justify-end gap-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+                <h2 className="page-section-title font-display text-2xl tracking-tight text-foreground">
+                  Get in touch
+                </h2>
                 <p className="inline-flex shrink-0 items-center gap-1.5 text-xs text-muted">
                   <span
                     className="open-for-work-dot size-1.5 shrink-0 rounded-full bg-open-green"
@@ -37,7 +40,6 @@ export function SiteFooter() {
                   Open for work
                 </p>
               </div>
-              <h2 className="page-section-title sr-only">Get in touch</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted">
                 If you want to talk analytics, tooling, or a role, send a note — I
                 read everything and reply when I can.

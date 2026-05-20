@@ -71,6 +71,7 @@ export function ContactForm() {
             type="text"
             required
             autoComplete="name"
+            placeholder="Your name"
             className={`${fieldClass} mt-1.5`}
           />
         </div>
@@ -85,6 +86,7 @@ export function ContactForm() {
             type="email"
             required
             autoComplete="email"
+            placeholder="you@company.com"
             className={`${fieldClass} mt-1.5`}
           />
         </div>
@@ -98,6 +100,7 @@ export function ContactForm() {
             name="message"
             required
             rows={5}
+            placeholder="What would you like to talk about?"
             className={`${fieldClass} mt-1.5 resize-y`}
           />
         </div>
