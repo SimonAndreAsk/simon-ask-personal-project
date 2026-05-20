@@ -68,7 +68,7 @@ export function ProjectList({ projects }: { projects: SanityDocument[] }) {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group grid grid-cols-[5rem_1fr] items-center gap-x-4 py-5 transition-colors hover:text-open-green"
+              className="group grid grid-cols-[5rem_1fr] items-start gap-x-4 py-5 transition-colors hover:text-open-green sm:items-center"
             >
               <div className="size-20 shrink-0 overflow-hidden rounded-xl bg-surface ring-1 ring-border/50">
                 {thumbUrl ? (
@@ -89,7 +89,7 @@ export function ProjectList({ projects }: { projects: SanityDocument[] }) {
                 )}
               </div>
               <div className="min-w-0">
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start justify-between gap-3 sm:gap-3">
                   <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-1">
                     <h3 className="font-display text-lg leading-snug tracking-tight text-foreground transition-colors group-hover:text-open-green sm:text-xl">
                       {project.title}
@@ -102,7 +102,7 @@ export function ProjectList({ projects }: { projects: SanityDocument[] }) {
                   </div>
                   {href ? (
                     <span
-                      className="inline-flex shrink-0 items-center gap-1 pt-0.5 text-sm font-medium text-muted opacity-0 transition-[opacity,color,transform] duration-200 group-hover:opacity-100 group-hover:text-open-green group-focus-visible:opacity-100 [@media(hover:none)]:opacity-100"
+                      className="hidden shrink-0 items-center gap-1 pt-0.5 text-sm font-medium text-muted opacity-0 transition-[opacity,color,transform] duration-200 group-hover:opacity-100 group-hover:text-open-green group-focus-visible:opacity-100 sm:inline-flex"
                       aria-hidden
                     >
                       {showGithubIcon ? (
@@ -120,6 +120,21 @@ export function ProjectList({ projects }: { projects: SanityDocument[] }) {
                   <p className="mt-2 text-sm leading-relaxed text-muted group-hover:text-foreground/80">
                     {project.summary}
                   </p>
+                ) : null}
+                {href ? (
+                  <span
+                    className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-muted transition-colors group-hover:text-open-green sm:hidden"
+                    aria-hidden
+                  >
+                    {showGithubIcon ? (
+                      <GithubIcon className="size-4 shrink-0" />
+                    ) : null}
+                    <span>{linkLabel}</span>
+                    <SiteIcon
+                      icon={ArrowRight}
+                      className="size-4 shrink-0"
+                    />
+                  </span>
                 ) : null}
               </div>
             </a>
