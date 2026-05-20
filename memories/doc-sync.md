@@ -16,6 +16,8 @@ Read when: you change project structure, or agent docs feel outdated.
 | `nextjs-simonask.io/src/sanity/load.ts`, `nextjs-simonask.io/src/sanity/env.ts` | `memories/sanity-conventions.md`, `memories/architecture.md` |
 | nextjs-simonask.io/src/app/ routes | `memories/nextjs-conventions.md` (file map table) |
 | nextjs-simonask.io/src/components/ (shell UI) | `memories/nextjs-conventions.md` |
+| `post-list.tsx`, `project-list.tsx`, `profile-timeline.tsx`, `label-pills.tsx` | `memories/homepage-cards.md`, `memories/nextjs-conventions.md` |
+| `nextjs-simonask.io/src/app/api/contact/` | `memories/contact-form.md`, `memories/nextjs-conventions.md` |
 | `nextjs-simonask.io/src/app/globals.css` | `memories/nextjs-conventions.md`, `.cursor/rules/nextjs.mdc` |
 | `nextjs-simonask.io/src/app/api/revalidate/route.ts` | `memories/sanity-conventions.md`, `memories/architecture.md` |
 | Deploy / branch / env workflow | `architecture.md`, root `README.md`, app READMEs |

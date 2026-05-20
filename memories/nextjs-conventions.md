@@ -11,7 +11,7 @@ Read when: editing the public site — pages, components, styles, or Sanity cons
 | Global styles | `src/app/globals.css` |
 | Components | `src/components/` |
 | Sanity client/fetch | `src/sanity/client.ts`, `load.ts`, `queries.ts`, `env.ts` |
-| Utils | `src/lib/format.ts`, `src/lib/contact.ts`, `src/lib/profile.ts`, `src/lib/experience.ts`, `src/lib/project-link.ts` |
+| Utils | `src/lib/format.ts`, `src/lib/contact.ts`, `src/lib/profile.ts`, `src/lib/experience.ts`, `src/lib/project-link.ts`, `src/lib/sections.ts`, `src/lib/scroll-to-section.ts` |
 | APIs | `src/app/api/revalidate/`, `src/app/api/draft-mode/`, `src/app/api/contact/` |
 
 ## Fetching content
@@ -32,12 +32,23 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 - Article prose: `.article-*` classes in `globals.css` (portable text from `article-body.tsx`)
 - Styling is **light only**: semantic tokens in `:root` / `@theme inline` — no `html.dark` or second palette
 - Open-for-work accent: `open-green` token and `.open-for-work-dot` animation
+- Homepage list cards (projects, writing, experience): see `memories/homepage-cards.md`
+
+## In-page navigation
+
+| File | Role |
+|------|------|
+| `src/lib/sections.ts` | Section IDs + `sectionHref()` — keep in sync with heading `id`s on home |
+| `src/lib/scroll-to-section.ts` | Smooth scroll with sticky header offset (`SECTION_SCROLL_GAP_PX = 32`); `prefers-reduced-motion` → instant |
+| `src/components/section-link.tsx` | Hash links use custom scroll (not browser default jump) |
+| `src/components/scroll-to-hash.tsx` | Scroll to hash on load / `hashchange` |
 
 ## Components (reuse before adding new)
 
 | Component | Role |
 |-----------|------|
-| `site-header`, `site-footer` | Chrome; footer includes `/#get-in-touch` form + portrait |
+| `site-header`, `site-footer` | Chrome; footer `/#get-in-touch` — center-column layout (portrait + form); no side quick-links column |
+| `section-link` | In-page hash navigation with smooth scroll |
 | `site-icon` | Lucide icons (mail, phone, arrows) + matching stroke brand SVGs (GitHub, LinkedIn); shared size/stroke + `iconLinkClass` |
 | `email-icon-link` | Mailto contact (icon link) |
 | `github-icon-link` | GitHub profile (icon link) |
@@ -46,10 +57,10 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 | `hero-contact-actions` | Home hero: Get in Touch + LinkedIn |
 | `staging-banner` | Shown on staging env |
 | `post-list` | Home writing listing — card layout aligned with `project-list` |
-| `project-list` | Home projects — technologies, thumbnail, summary, contextual link label |
+| `project-list` | Home projects — technologies, summary, contextual link label (card spec: `homepage-cards.md`) |
 | `label-pills` | Neutral label pills from Sanity `projectTechnology` / `postCategory` (`content-labels.ts`) |
 | `contact-aside` | Footer contact — centered portrait above the form |
-| `contact-form` | Name / email / message form in footer → `POST /api/contact` (Resend) |
+| `contact-form` | Name / email / message form in footer → `POST /api/contact` — Resend/Vercel: `memories/contact-form.md` |
 | `experience-section`, `education-section` | Home CV blocks (`/#experience`, `/#education`); experience from Sanity |
 | `profile-timeline` | Experience and education cards — same inner layout as before (title + period row), no logos |
 | `article-body` | Portable text rendering |
@@ -62,3 +73,4 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 | Server components + `sanityFetch` for content | Hardcode project ID or dataset in source |
 | Match existing spacing/typography in `globals.css` | Add a second CSS framework or a second color-scheme layer |
 | Keep `metadata` in layout or page exports | Bypass `getSanityClient()` preview logic for drafts on staging |
+| Read `homepage-cards.md` before changing list card layout | Re-add thumbnails or per-tag colors without an explicit ask |

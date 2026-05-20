@@ -8,6 +8,8 @@ Project-specific context for agents. **Do not read every file** — pick **at mo
 
 | File | Prompt signals (examples) |
 |------|---------------------------|
+| [contact-form.md](./contact-form.md) | contact form, Resend, `RESEND_API_KEY`, get in touch form, message not sent, 503 contact |
+| [homepage-cards.md](./homepage-cards.md) | project card, writing card, post list, list card, same as projects, tags spacing, thumbnail, mobile card, experience card |
 | [nextjs-conventions.md](./nextjs-conventions.md) | `nextjs-simonask.io`, pages, components, `globals.css`, theme, layout, site UI, fetch on site |
 | [sanity-conventions.md](./sanity-conventions.md) | GROQ, publish, revalidate, Presentation on site, webhooks, draft preview |
 | [sanity-studio-development.md](./sanity-studio-development.md) | `studio-simonask.io`, schema, field, document type, desk, Studio plugin |

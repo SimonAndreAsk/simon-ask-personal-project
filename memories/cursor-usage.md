@@ -12,9 +12,15 @@ Start a **new chat** for each discrete job:
 | One feature slice | `Add optional subtitle field to post schema in studio-simonask.io` |
 | Git / PR | `Commit staged changes with message …` / `Open PR to main` |
 | Ship to prod | **`Go Live`** — commit, push `staging`, merge to `main` (see `go-live.md`) |
+| Studio + site ship | **`Deploy Sanity` then `Go Live`** — see `go-live.md` § Go Live and Deploy Sanity |
 | Doc/structure change | `Renamed src/app/blog to posts — update agent docs` |
+| UI like another section | `Match project-list card padding; keep profile-timeline title/period row` → `homepage-cards.md` |
+| Revert this chat only | `Revert all changes from this chat only; then Go Live` |
+| Contact broken on prod | `Fix live contact form — check Vercel RESEND_API_KEY and mail.simonask.io sender` → `contact-form.md` |
 
 **Stay in the same chat** only while iterating on the *same* file/PR.
+
+After a long homepage card spacing thread, start a **new chat** for **Go Live** — keeps ship steps small and avoids stale UI context.
 
 You do **not** need to `@` memories or skills — the agent reads `memories/INDEX.md` and picks context (see workspace rule).
 

@@ -11,7 +11,7 @@ Apply when the user explicitly asks for a commit, PR, or **Go Live**.
 
 ## Go Live
 
-When the user says **Go Live** (any casing), follow `memories/go-live.md`: commit on `staging`, push, merge `staging` → `main`, push `main`, return to `staging`. Always push unless the tree is already clean (then report that).
+When the user says **Go Live** or **Go Live and Deploy Sanity**, follow **`memories/go-live.md` only** (do not duplicate its step list here). For combined ship, use the “Go Live and Deploy Sanity” section there first, then the git steps.
 
 ## Commits
 

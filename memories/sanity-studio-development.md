@@ -52,6 +52,20 @@ Also touch Next.js when the type should appear on simonask.io:
 
 ---
 
+## Naming map (editors ↔ code)
+
+| Editor sees (desk) | `_type` | Site / field |
+|--------------------|---------|----------------|
+| Writing → Drafts / Published / All posts | `post` | Home writing; `categories` → `postCategory` |
+| Homepage → Projects | `project` | `/#projects`; `technologies` → `projectTechnology` |
+| Homepage → Experience | `experience` | `/#experience` |
+| Taxonomies → Technologies | `projectTechnology` | Pills on project cards |
+| Taxonomies → Post categories | `postCategory` | Pills on writing cards |
+
+Canonical term for project stack labels: **Technologies** (not project tags / tools).
+
+---
+
 ## Desk & Presentation
 
 **Desk** (`structure.ts`) — nested groups:

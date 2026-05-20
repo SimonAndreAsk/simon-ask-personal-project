@@ -6,6 +6,16 @@ Read when: the user says **Go Live** (any casing).
 
 Ship the current working tree to **staging**, then **production** via `main` — same flow every time, in any chat.
 
+## Go Live and Deploy Sanity
+
+When the user says **Go Live and Deploy Sanity** (or deploy studio then go live):
+
+1. If `studio-simonask.io/` changed (or user wants Studio redeployed) → follow `memories/deploy-sanity.md` first (`cd studio-simonask.io && npm run deploy`).
+2. Then run **Steps** below (git → Vercel for the Next app).
+3. Remind: Studio deploy updates hosted Studio UI/schema — editors still **Publish** documents for content on the site.
+
+Next-only changes skip step 1.
+
 ## Steps (agent)
 
 1. `git status` — confirm branch is `staging` and what will be committed.

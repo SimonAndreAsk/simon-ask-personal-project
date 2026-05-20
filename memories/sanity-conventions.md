@@ -28,13 +28,13 @@ Fields: `title`, `url` (external link), optional `technologies` (references to `
 
 ## Technology document (`projectTechnology`)
 
-Fields: `label` only. Reusable across projects. Studio sidebar: **Taxonomies → Technologies**. Homepage: neutral pills above project title (`label-pills.tsx`, default list label "Technologies").
+Fields: `label` only. Reusable across projects. Studio sidebar: **Taxonomies → Technologies** (canonical editor term — not “project tags” or “tools”). Homepage: neutral pills above project title (`label-pills.tsx`, default list label "Technologies"); **no** per-tag colors in schema.
 
 **Taxonomy workflow:** create entries under **Technologies** (or **Post categories**) first, then attach on **Projects** or **Posts**.
 
 ## Experience document (`experience`)
 
-Fields: `title` (organization), optional `subtitle` (role), optional `period`, optional `href`, required `logoAlt`, optional `logoImage`, optional `details` (string array), `publishedAt` (sort date — homepage lists most recent first). Studio: **Details** group. Listed on site home (`/#experience`); Presentation resolves to `/#experience`.
+Fields: `title` (organization), optional `subtitle` (role), optional `period`, optional `href`, optional `logoAlt` / `logoImage` (legacy — **homepage does not render logos**), optional `details` (string array), `publishedAt` (sort date — homepage lists most recent first). Studio: **Details** group. Listed on site home (`/#experience`); Presentation resolves to `/#experience`. Site layout: card chrome + title/period row — see `memories/homepage-cards.md`.
 
 ## Hosted Studio deploy
 

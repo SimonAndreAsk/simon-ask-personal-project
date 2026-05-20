@@ -16,6 +16,8 @@ Project notes for **Cursor** and for you when conventions matter. Files are shor
 
 | File | Topic |
 |------|--------|
+| [contact-form.md](./contact-form.md) | Footer form, Resend, Vercel env |
+| [homepage-cards.md](./homepage-cards.md) | Project/writing/experience card layout on the home page |
 | [nextjs-conventions.md](./nextjs-conventions.md) | Site pages, components, styles, Sanity fetch on the Next app |
 | [sanity-conventions.md](./sanity-conventions.md) | GROQ, publish, webhooks, Presentation |
 | [sanity-studio-development.md](./sanity-studio-development.md) | Studio schema, desk, plugins |
