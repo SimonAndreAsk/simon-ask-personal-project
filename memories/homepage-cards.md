@@ -29,12 +29,13 @@ Hover: `group` on the card link; title and destination link use `group-hover:tex
 |------|--------|
 | Padding | `px-8 pb-6 pt-8` |
 | Min height | `min-h-56` |
-| Layout | Flex column; tags at top; title + summary + link grouped at bottom (`mt-auto` + `pt-14` on inner block) |
+| Layout | Flex column; tags at top; title + meta/link grouped at bottom (`mt-auto` + `pt-14` on inner block) |
 | Thumbnails | **Hidden** on all breakpoints (text-forward cards) |
 | Tags | `LabelPills` — neutral pills only (no per-tag colors in Studio) |
 | Link row | **Always visible** at bottom (`min-h-11`), not hover-only |
 | Spacing tags → title | `pt-14` on the block below tags (~56px; user asked for generous gap) |
-| Inner text gaps | `gap-1.5` between title, meta/summary, and link |
+| Inner text gaps | `gap-1.5` between title, meta, and link |
+| Preview text | **Projects only** — `summary` line-clamp. **Writing** — no excerpt or body preview on cards |
 
 **“Same as projects”** → apply the same class strings to **both** `project-list.tsx` and `post-list.tsx`. Do not change `profile-timeline.tsx` layout unless the user asks for experience/education specifically.
 

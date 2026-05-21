@@ -5,7 +5,7 @@ import { type SanityDocument } from "next-sanity";
 import { LabelPills } from "@/components/label-pills";
 import { SiteIcon } from "@/components/site-icon";
 import { formatDate } from "@/lib/format";
-import { readingMinutes, truncateExcerpt } from "@/lib/post-excerpt";
+import { readingMinutes } from "@/lib/post-excerpt";
 import { postCategoriesFromSanity } from "@/lib/content-labels";
 
 function isDraftPost(post: SanityDocument) {
@@ -13,18 +13,6 @@ function isDraftPost(post: SanityDocument) {
 }
 
 const READ_LABEL = "Read article";
-
-function postExcerpt(post: SanityDocument): string | null {
-  const raw =
-    typeof post.excerpt === "string" && post.excerpt.trim()
-      ? post.excerpt.trim()
-      : typeof post.excerptText === "string" && post.excerptText.trim()
-        ? post.excerptText.trim()
-        : null;
-
-  if (!raw) return null;
-  return truncateExcerpt(raw);
-}
 
 function postAriaLabel(
   title: string,
@@ -85,13 +73,10 @@ export function PostList({ posts }: { posts: SanityDocument[] }) {
             : "";
         const href = slug ? `/${slug}` : "#";
         const hasSlug = Boolean(slug);
-        const excerpt = postExcerpt(post);
         const readMinutes =
-          typeof post.excerptText === "string" && post.excerptText.trim()
-            ? readingMinutes(post.excerptText)
-            : excerpt
-              ? readingMinutes(excerpt)
-              : null;
+          typeof post.readingText === "string" && post.readingText.trim()
+            ? readingMinutes(post.readingText)
+            : null;
         const title = typeof post.title === "string" ? post.title : "Article";
         const showMeta = Boolean(post.publishedAt || readMinutes);
         const categories = postCategoriesFromSanity(post.categories);
@@ -134,16 +119,6 @@ export function PostList({ posts }: { posts: SanityDocument[] }) {
                       {readMinutes ? <span>{readMinutes} min read</span> : null}
                     </p>
                   ) : null}
-
-                  {excerpt ? (
-                    <p className="line-clamp-2 text-sm leading-snug text-muted group-hover:text-foreground/80 sm:leading-relaxed">
-                      {excerpt}
-                    </p>
-                  ) : (
-                    <p className="text-sm leading-snug text-muted group-hover:text-foreground/80 sm:leading-relaxed">
-                      Open to read the full article.
-                    </p>
-                  )}
 
                   <PostDestination
                     className="mt-0 min-h-11 items-center"

@@ -14,7 +14,7 @@ Read when: schema, Studio config, GROQ, Presentation preview, or publish/revalid
 
 ## Post document (`post`)
 
-Fields: `title`, `slug`, optional `categories` (references to `postCategory`), optional `excerpt` (homepage preview; falls back to first paragraph of `body`), `body` (`blockContent`), `image` (cover — list/social only), `publishedAt`. Studio groups: **Article** / **Publishing**.
+Fields: `title`, `slug`, optional `categories` (references to `postCategory`), `body` (`blockContent`), `image` (cover — list/social only), `publishedAt`. Studio groups: **Article** / **Publishing**. Homepage writing cards show title, date, and read time only (no preview text).
 
 ## Post category document (`postCategory`)
 

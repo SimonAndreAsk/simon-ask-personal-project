@@ -32,15 +32,6 @@ export const postType = defineType({
         'Topics for this article. Create categories under Post categories in the sidebar, then pick them here.',
     }),
     defineField({
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'text',
-      rows: 3,
-      group: 'article',
-      description:
-        'Short preview on the homepage writing list. If empty, the first paragraph of the article is used.',
-    }),
-    defineField({
       name: 'body',
       title: 'Article',
       type: 'blockContent',

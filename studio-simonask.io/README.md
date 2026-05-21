@@ -77,7 +77,7 @@ Unpublished drafts do **not** appear on production.
 
 **Post** — `schemaTypes/postType.ts`
 
-- `title`, `slug`, optional `categories` → `postCategory`, optional `excerpt`, `body` (`blockContent`), `image` (cover), `publishedAt`
+- `title`, `slug`, optional `categories` → `postCategory`, `body` (`blockContent`), `image` (cover), `publishedAt`
 
 **Project** — `schemaTypes/projectType.ts`
 

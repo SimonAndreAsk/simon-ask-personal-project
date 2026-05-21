@@ -6,8 +6,7 @@ export const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(
   slug,
   publishedAt,
   image,
-  excerpt,
-  "excerptText": coalesce(excerpt, pt::text(body)),
+  "readingText": pt::text(body),
   "categories": categories[]-> {
     _id,
     label
