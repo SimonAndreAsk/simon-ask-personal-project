@@ -6,8 +6,8 @@ Read when: project card, writing/post list, “same as projects”, tag spacing,
 
 | Section | File |
 |---------|------|
-| Projects | `nextjs-simonask.io/src/components/project-list.tsx` |
-| Writing | `nextjs-simonask.io/src/components/post-list.tsx` |
+| Projects | `nextjs-simonask.io/src/components/project-list.tsx` — `project` docs + posts with category label `Project` |
+| Writing | `nextjs-simonask.io/src/components/post-list.tsx` — posts without `Project` category |
 | Experience / education | `nextjs-simonask.io/src/components/profile-timeline.tsx` |
 | Tags | `nextjs-simonask.io/src/components/label-pills.tsx` + `src/lib/content-labels.ts` |
 

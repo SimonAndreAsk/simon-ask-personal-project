@@ -7,6 +7,10 @@ import { HeroIntroMeta, HeroMobileLocationRow } from "@/components/hero-intro-me
 import { PostList } from "@/components/post-list";
 import { ProjectList } from "@/components/project-list";
 import { SectionLink } from "@/components/section-link";
+import {
+  mergeHomepageProjectsByDate,
+  partitionPostsForHomepage,
+} from "@/lib/content-labels";
 import { experienceEntriesFromSanity } from "@/lib/experience";
 import { sanityFetch } from "@/sanity/load";
 import { EXPERIENCE_QUERY, POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
@@ -23,6 +27,8 @@ export default async function HomePage() {
     sanityFetch<SanityDocument[]>(EXPERIENCE_QUERY, {}, options),
   ]);
   const experience = experienceEntriesFromSanity(experienceDocs);
+  const { projectPosts, writingPosts } = partitionPostsForHomepage(posts);
+  const homepageProjects = mergeHomepageProjectsByDate(projects, projectPosts);
 
   return (
     <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-14 sm:px-8 sm:py-20">
@@ -81,7 +87,7 @@ export default async function HomePage() {
           demo, or write-up.
         </p>
         <div className="mt-8">
-          <ProjectList projects={projects} />
+          <ProjectList projects={homepageProjects} />
         </div>
       </section>
 
@@ -96,7 +102,7 @@ export default async function HomePage() {
           Essays and build logs you can read in full — pick a title below.
         </p>
         <div className="mt-8">
-          <PostList posts={posts} />
+          <PostList posts={writingPosts} />
         </div>
       </section>
 

@@ -9,6 +9,7 @@ import {
   headingIdsByBlockKey,
 } from "@/lib/article-headings";
 import { SectionLink } from "@/components/section-link";
+import { isProjectPost } from "@/lib/content-labels";
 import { formatDate } from "@/lib/format";
 import { client } from "@/sanity/client";
 import { isStagingSite } from "@/sanity/env";
@@ -58,6 +59,10 @@ export default async function PostPage({ params }: PageProps) {
   const headingIds = headingIdsByBlockKey(headings);
 
   const isDraft = post._id.startsWith("drafts.");
+  const backSection = isProjectPost(post)
+    ? SITE_SECTIONS.projects
+    : SITE_SECTIONS.writing;
+  const backLabel = isProjectPost(post) ? "Projects" : "Writing";
   const postImageUrl = post.image
     ? urlFor(post.image)?.width(1200).height(630).fit("crop").url()
     : null;
@@ -65,10 +70,10 @@ export default async function PostPage({ params }: PageProps) {
   return (
     <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-12 sm:px-8 sm:py-16">
       <SectionLink
-        href={sectionHref(SITE_SECTIONS.writing)}
+        href={sectionHref(backSection)}
         className="mb-10 inline-flex text-sm text-muted transition-colors hover:text-foreground"
       >
-        ← Writing
+        ← {backLabel}
       </SectionLink>
 
       {isDraft && isStagingSite && (
