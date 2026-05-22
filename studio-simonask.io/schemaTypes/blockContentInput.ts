@@ -16,6 +16,9 @@ export const blockContentInput = WithBlockSelector({
         codeBlock: {
           description: 'Syntax-highlighted code',
         },
+        mermaidDiagram: {
+          description: 'Flowchart, sequence, or other Mermaid diagram',
+        },
       },
     },
   ],

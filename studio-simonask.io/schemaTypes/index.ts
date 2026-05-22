@@ -2,6 +2,7 @@ import {blockContentType} from './blockContentType'
 import {calloutType} from './blocks/calloutType'
 import {codeBlockType} from './blocks/codeBlockType'
 import {figureType} from './blocks/figureType'
+import {mermaidDiagramType} from './blocks/mermaidDiagramType'
 import {experienceType} from './experienceType'
 import {postCategoryType} from './postCategoryType'
 import {postType} from './postType'
@@ -18,4 +19,5 @@ export const schemaTypes = [
   calloutType,
   figureType,
   codeBlockType,
+  mermaidDiagramType,
 ]

@@ -20,7 +20,7 @@ Fields: `title`, `slug`, optional `categories` (references to `postCategory`), o
 
 Fields: `label` only. Reusable across posts. Studio sidebar: **Taxonomies → Post categories**. Homepage: neutral pills at top of writing cards (`label-pills.tsx`, list label "Categories"). A post whose category label is exactly **`Project`** is listed under **Projects** (not Writing) and uses a project-style card linking to the article slug; the **Project** category pill is not shown — use **`technologies`** for pills on that card. Article back link goes to `/#projects`.
 
-**Article body** — structured blocks (not shortcodes): use **⋯** insert menu or `@selvklart/sanity-block-selector` picker on the field. Types: text (normal, H2, H3, quote), **Image** (`figure`), **Callout**, **Code** (`codeBlock`). Do not type `/callout` in prose. Schema: `blockContentType.ts`, `blockContentInput.ts`, `blocks/`. Site: `article-body.tsx`.
+**Article body** — structured blocks (not shortcodes): use **⋯** insert menu or `@selvklart/sanity-block-selector` picker on the field. Types: text (normal, H2, H3, quote), **Image** (`figure`), **Callout**, **Code** (`codeBlock`), **Mermaid diagram** (`mermaidDiagram`). Do not type `/callout` in prose. Schema: `blockContentType.ts`, `blockContentInput.ts`, `blocks/`. Site: `article-body.tsx`, `mermaid-diagram.tsx` (client render).
 
 ## Project document (`project`)
 

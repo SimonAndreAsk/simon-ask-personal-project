@@ -95,7 +95,7 @@ Unpublished drafts do **not** appear on production.
 
 - `title` (organization), `subtitle`, `period`, `href`, `logoAlt`, `logoImage`, `details`, `publishedAt` (sort date)
 
-**Article blocks** (embedded in post body) — `figure`, `callout`, `codeBlock` via `blockContentType.ts`
+**Article blocks** (embedded in post body) — `figure`, `callout`, `codeBlock`, `mermaidDiagram` via `blockContentType.ts`
 
 ## Dataset migration (schema renames)
 

@@ -1,6 +1,7 @@
 import { type SanityImageSource } from "@sanity/image-url";
 import { PortableText, type PortableTextComponents } from "next-sanity";
 
+import { MermaidDiagram } from "@/components/mermaid-diagram";
 import { urlFor } from "@/sanity/image";
 
 type CalloutValue = { tone?: string; text?: string };
@@ -18,6 +19,10 @@ type CodeSnippet =
 type CodeBlockValue = {
   language?: string;
   code?: CodeSnippet;
+};
+
+type MermaidDiagramValue = {
+  code?: string;
 };
 
 function resolveCodeBlock(block: CodeBlockValue) {
@@ -134,6 +139,12 @@ function buildComponents(
           <code>{snippet.text}</code>
         </pre>
       );
+    },
+    mermaidDiagram: ({ value }) => {
+      const diagram = value as MermaidDiagramValue;
+      if (!diagram.code) return null;
+
+      return <MermaidDiagram code={diagram.code} />;
     },
   },
   };
