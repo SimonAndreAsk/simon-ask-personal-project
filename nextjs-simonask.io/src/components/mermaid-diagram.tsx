@@ -2,11 +2,11 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 
+import { buildMermaidConfig } from "@/lib/mermaid-theme";
+
 type MermaidDiagramProps = {
   code: string;
 };
-
-let mermaidInitialized = false;
 
 export function MermaidDiagram({ code }: MermaidDiagramProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,15 +29,7 @@ export function MermaidDiagram({ code }: MermaidDiagramProps) {
 
       try {
         const mermaid = (await import("mermaid")).default;
-
-        if (!mermaidInitialized) {
-          mermaid.initialize({
-            startOnLoad: false,
-            theme: "neutral",
-            securityLevel: "strict",
-          });
-          mermaidInitialized = true;
-        }
+        mermaid.initialize(buildMermaidConfig());
 
         const { svg, bindFunctions } = await mermaid.render(renderId, trimmed);
 
@@ -81,7 +73,7 @@ export function MermaidDiagram({ code }: MermaidDiagramProps) {
       <div
         ref={containerRef}
         className="article-mermaid-viewer"
-        aria-label="Mermaid diagram"
+        aria-label="Architecture diagram"
       />
     </figure>
   );

@@ -48,9 +48,9 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 | Component | Role |
 |-----------|------|
 | `site-header`, `site-footer` | Chrome; footer `/#get-in-touch` — center-column layout (portrait + form); `/privacy` link in footer bar |
-| `consent-defaults`, `cookie-consent` | Consent Mode v2 defaults + DIY banner; `localStorage` key `cookie_consent_v1` |
-| `google-tag-manager` | GTM head + noscript; `NEXT_PUBLIC_GTM_WEB_CONTAINER_ID`; loads after consent defaults |
-| Web GA4 (GTM UI) | `server_container_url` → `https://serverside.simonask.io` (Step 13); not in layout code |
+| `consent-defaults`, `cookie-consent` | Consent Mode v2 defaults, gtag init (`G-12345` + `server_container_url`), DIY banner; `cookie_consent_v1` |
+| `google-tag-manager` | GTM head + noscript; `NEXT_PUBLIC_GTM_WEB_CONTAINER_ID`; loads after `consent-defaults` |
+| Server GTM | `NEXT_PUBLIC_GTM_SERVER_URL` → `server_container_url` in `consent-defaults.tsx` (default `https://serverside.simonask.io`) |
 | `open-cookie-settings-button` | Reopens banner via `cookie-settings-open` event (footer + `/privacy`) |
 | `section-link` | In-page hash navigation with smooth scroll |
 | `site-icon` | Lucide icons (mail, phone, arrows) + matching stroke brand SVGs (GitHub, LinkedIn); shared size/stroke + `iconLinkClass` |
@@ -68,7 +68,7 @@ import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/queries";
 | `experience-section`, `education-section` | Home CV blocks (`/#experience`, `/#education`); experience from Sanity |
 | `profile-timeline` | Experience and education cards — same inner layout as before (title + period row), no logos |
 | `article-body` | Portable text rendering; `headingIds` for in-article anchor targets |
-| `mermaid-diagram` | Client-side Mermaid SVG for `mermaidDiagram` portable-text blocks |
+| `mermaid-diagram` | Client-side Mermaid SVG for `mermaidDiagram` blocks; theme in `lib/mermaid-theme.ts` |
 | `article-table-of-contents` | Auto TOC from post h2/h3 (`article-headings.ts`) |
 | `hero-intro-meta`, `location-label`, `open-for-work-label` | Hero location + hiring status |
 

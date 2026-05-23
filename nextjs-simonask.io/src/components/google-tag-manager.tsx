@@ -8,7 +8,7 @@ function getGtmContainerId(): string | null {
   return id;
 }
 
-/** GTM loader — after consent defaults, high in document head (plan Step 7). */
+/** Standard GTM container loader — after consent-defaults + gtag init */
 export function GoogleTagManagerHead() {
   const gtmId = getGtmContainerId();
   if (!gtmId) return null;

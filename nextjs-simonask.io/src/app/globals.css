@@ -401,16 +401,56 @@ body {
 
 .article-mermaid-viewer {
   overflow-x: auto;
-  padding: 1.25rem 1.5rem;
+  padding: 1.75rem 1.5rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--background);
 }
 
 .article-mermaid-viewer svg {
   display: block;
-  max-width: none;
+  max-width: 100%;
   margin: 0 auto;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Architecture-diagram polish (Mermaid SVG output) */
+.article-mermaid-viewer .node rect,
+.article-mermaid-viewer .node polygon,
+.article-mermaid-viewer .node path {
+  stroke-linejoin: round;
+}
+
+.article-mermaid-viewer .edgeLabel {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.article-mermaid-viewer .edgeLabel rect {
+  fill: var(--background);
+  stroke: var(--border);
+  stroke-width: 1px;
+  rx: 4px;
+}
+
+.article-mermaid-viewer .cluster-label .nodeLabel,
+.article-mermaid-viewer .cluster .cluster-label span {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--muted);
+}
+
+.article-mermaid-viewer .flowchart-link {
+  stroke-width: 1.5px;
+}
+
+.article-mermaid-viewer .marker {
+  fill: var(--muted);
+  stroke: var(--muted);
 }
 
 .article-mermaid--error {
