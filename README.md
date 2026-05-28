@@ -19,7 +19,7 @@ Personal portfolio site (with writing) and Sanity CMS for [simonask.io](https://
 | Production | `main` | [simonask.io](https://simonask.io) |
 | Staging | `staging` | [stage.simonask.io](https://stage.simonask.io) |
 
-**GitHub:** [SimonAndreAsk/simon-ask-personal-project](https://github.com/SimonAndreAsk/simon-ask-personal-project)
+**GitHub:** [SimonAndreAsk/simonask.io](https://github.com/SimonAndreAsk/simonask.io)
 
 ## Start here
 
