@@ -56,7 +56,7 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="flex items-center gap-0.5 border-l border-border/40 pl-7">
-            <EmailIconLink />
+            <EmailIconLink buttonLocation="header_email" />
             <GithubIconLink />
           </div>
         </div>
@@ -93,7 +93,7 @@ export function SiteHeader() {
             ))}
           </ul>
           <div className="mt-4 flex items-center gap-0.5 border-t border-border/40 pt-4">
-            <EmailIconLink />
+            <EmailIconLink buttonLocation="header_email" />
             <GithubIconLink />
           </div>
         </nav>

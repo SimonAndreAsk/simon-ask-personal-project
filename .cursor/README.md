@@ -6,7 +6,7 @@ Cursor IDE configuration for this repo. You rarely edit these by hand — they g
 
 | Path | Purpose |
 |------|---------|
-| **`rules/`** | Short rules auto-attached when you edit matching folders (e.g. Next.js vs Studio) |
+| **`rules/`** | Short rules auto-attached when you edit matching folders (e.g. Next.js vs Studio); `guidelines.mdc` is `alwaysApply` (global behavioral guidelines) |
 | **`skills/`** | Step-by-step workflows the agent loads by intent (commit, PR, **Go Live**, Studio schema) |
 | **`hooks.json`** | Optional automation (doc validation on stop is currently off) |
 

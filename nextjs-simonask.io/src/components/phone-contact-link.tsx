@@ -1,7 +1,10 @@
+"use client";
+
 import { Phone } from "lucide-react";
 
 import { SiteIcon, iconLinkClass } from "@/components/site-icon";
 import { contactPhone, contactPhoneHref } from "@/lib/contact";
+import { pushContactClick } from "@/lib/datalayer";
 
 type PhoneContactLinkProps = {
   /** Show the formatted number beside the icon (footer). */
@@ -18,6 +21,7 @@ export function PhoneContactLink({ showLabel = false }: PhoneContactLinkProps) {
           : iconLinkClass
       }
       aria-label={`Call ${contactPhone}`}
+      onClick={() => pushContactClick("footer_phone")}
     >
       <SiteIcon icon={Phone} />
       {showLabel ? <span>{contactPhone}</span> : null}

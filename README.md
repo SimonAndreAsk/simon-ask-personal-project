@@ -33,6 +33,7 @@ Personal portfolio site (with writing) and Sanity CMS for [simonask.io](https://
 | Use Cursor (rules, skills, memories) | [docs/cursor-memories-and-skills.md](./docs/cursor-memories-and-skills.md) |
 | Find a folder by plain English (“public site”, “CMS”) | [docs/repo-map.md](./docs/repo-map.md) |
 | Ship code vs publish posts | [docs/shipping.md](./docs/shipping.md) |
+| Check dataLayer payloads vs tracking hub contracts | [docs/tracking-contracts.md](./docs/tracking-contracts.md) → `npm run validate:tracking` at repo root |
 
 **First time setup:** install [Node.js](https://nodejs.org/) 20+, then run `npm install` inside **each** app folder you need (`nextjs-simonask.io` and/or `studio-simonask.io`). Copy `.env.example` → `.env.local` in that folder before `npm run dev`.
 

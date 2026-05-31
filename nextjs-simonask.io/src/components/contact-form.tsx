@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { pushContactFormSubmit } from "@/lib/datalayer";
+
 const fieldClass =
   "w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-foreground shadow-sm transition-[border-color,box-shadow] placeholder:text-muted/80 focus:border-open-green/50 focus:outline-none focus:ring-2 focus:ring-open-green/20";
 
@@ -40,6 +42,7 @@ export function ContactForm() {
       }
 
       setStatus("success");
+      pushContactFormSubmit("footer");
       form.reset();
     } catch {
       setStatus("error");

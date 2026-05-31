@@ -72,7 +72,7 @@ export function SiteFooter() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 border-t border-border/40 pt-6 sm:justify-between">
             <div className="flex flex-wrap items-center gap-0.5">
-              <EmailIconLink />
+              <EmailIconLink buttonLocation="footer_email" />
               <GithubIconLink />
               <LinkedinIconLink />
             </div>

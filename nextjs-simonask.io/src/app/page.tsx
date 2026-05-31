@@ -63,7 +63,11 @@ export default async function HomePage() {
                 education
               </SectionLink>
               {" or "}
-              <SectionLink href={sectionHref(SITE_SECTIONS.getInTouch)} className={introLinkClass}>
+              <SectionLink
+                href={sectionHref(SITE_SECTIONS.getInTouch)}
+                className={introLinkClass}
+                contactClickLocation="intro_inline"
+              >
                 get in touch with me
               </SectionLink>
               .
